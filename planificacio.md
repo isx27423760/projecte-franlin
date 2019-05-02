@@ -18,4 +18,4 @@
 
 ## 4a setmana 
 
-- Altres (possible construcció de l'entorn de treball amb dockers, monitorizar samba i kerberos).
+- Preparacio per la presentacio del projecte.
