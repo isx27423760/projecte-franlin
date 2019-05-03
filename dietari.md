@@ -1,7 +1,7 @@
 # Dietari del projecte : Grafana
 
 Dia | Objectius de tasca a realitzar | comentaris | Hores realitzades
-----|------------------|-------------------
+----|--------------------------------|------------|------------------
 24/04/2019 | Investigació. | Investigacio del tema a realitzar. | 4 hores.
 25/04/2019 | Investigació. | Investigacio del tema a realitzar per la planificacio. | 4 hores.
 26/04/2019 | Preparacio del repositori github. | preparacio del github.  | 4 hores.
