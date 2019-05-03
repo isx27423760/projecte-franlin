@@ -8,4 +8,5 @@ Dia | Objectius de tasca a realitzar | comentaris | Hores realitzades
 29/04/2019 | Examen de Sistemas (Iptables). | Examen de Sistemas (Iptables). |3 hores.
 30/04/2019 | Proves de implementacio de grafana i utilitzacio en un host fisic. | Proves de implementacio en la maquina fisica. | 4 hores.
 02/05/2019 | Implementacio en docker. | Problemas a la hora de crear els containers dockers per als diferents serveis que necesita Grafana. | 6 hores.
+03/05/2019 | Examen de sistemes (Docker). | Examen de sistemes (Docker). | 4 hores.
 
