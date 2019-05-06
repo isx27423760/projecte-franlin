@@ -5,7 +5,7 @@ ideal para logs o datos para gráficas que se generen en vivo.
 
 Programado en go permite la interacción via API HTTP(S) (JSON) e interficie web y los datos de gestionan con un lenguaje similar a SQL.
 
-**Conceptos basicos de InfluxDB **
+**Conceptos basicos de InfluxDB**
 
 * **Database:** es el contenedor lógico que contiene series temporales, usuarios, políticas de retención ,etc.
 
@@ -24,7 +24,7 @@ Son campos indexados y almacenados como strings. Son opcionales en la infraestru
 
 * **Point:** es el conjunto de valores de fields y tags asociados a un timestamp. Podríamos asociarlo a un registro de la tabla. (Similar a las filas de SQL) 
 
-## Caracteristicas de influXDB
+## Caracteristicas de influxDB
 
 Algunas de las características que definen InfluxDB son las siguientes:
 
