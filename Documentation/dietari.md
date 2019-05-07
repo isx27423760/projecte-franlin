@@ -10,4 +10,5 @@ Dia | Objectius de tasca a realitzar | comentaris | Hores realitzades
 02/05/2019 | Implementacio en docker. | Problemas a la hora de crear els containers dockers per als diferents serveis que necesita Grafana. | 6 hores.
 03/05/2019 | Examen de sistemes (Docker). | Examen de sistemes (Docker). | 4 hores.
 06/05/2019 | Documentacio de Grafana,influxdb,telegraf | investigacio de influxDB | 2 hores.
+07/05/2019 | Examen base de dades MongoDB | Examen base de dades MongoDB | 3 hores.
 
