@@ -11,4 +11,5 @@ Dia | Objectius de tasca a realitzar | comentaris | Hores realitzades
 03/05/2019 | Examen de sistemes (Docker). | Examen de sistemes (Docker). | 4 hores.
 06/05/2019 | Documentacio de Grafana,influxdb,telegraf | investigacio de influxDB | 2 hores.
 07/05/2019 | Examen base de dades MongoDB | Examen base de dades MongoDB | 3 hores.
+08/05/2019 | Documentación | Documentación de Grafana,influxdb y telegraf | 3 hores.
 

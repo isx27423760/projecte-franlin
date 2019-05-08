@@ -8,5 +8,5 @@ con docker.
 
 **Modelos de seguimiento:**
 	- Modo de prueba: Sin Docker(para ver el funcionamiento de grafana).
-	- Modo Avanzado : Con Docker y monitorizando servicios como ldap, samba, kerberos.
+	- Modo Avanzado : Con Docker y monitorizar servicios como ldap, http o/y recursos cpu,ram,disk.
 
