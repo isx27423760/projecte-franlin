@@ -1,7 +1,8 @@
 # InfluxDB
 
 Influxdb es un servidor de base de datos de series de tiempo (timeseries), 
-ideal para logs o datos para gráficas que se generen en vivo.
+ideal para logs o datos para gráficas que se generen en vivo, ademas tiene un rendimiento
+importante ante la entrada de grandes datos.
 
 Programado en go permite la interacción via API HTTP(S) (JSON) e interficie web y los datos de gestionan con un lenguaje similar a SQL.
 
