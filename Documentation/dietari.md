@@ -2,14 +2,14 @@
 
 Dia | Objectius de tasca a realitzar | comentaris | Hores realitzades
 ----|--------------------------------|------------|------------------
-24/04/2019 | Investigació. | Investigacio del tema a realitzar. | 4 hores.
-25/04/2019 | Investigació. | Investigacio del tema a realitzar per la planificacio. | 4 hores.
-26/04/2019 | Preparacio del repositori github. | preparacio del github.  | 4 hores.
+24/04/2019 | Investigación. | Investigación del tema a realizar. | 4 hores.
+25/04/2019 | Investigación. | Investigación del tema a realizar para la planificación. | 4 hores.
+26/04/2019 | Preparación del repositorio github. | preparacio del github.  | 4 hores.
 29/04/2019 | Examen de Sistemas (Iptables). | Examen de Sistemas (Iptables). |3 hores.
 30/04/2019 | Proves de implementacio de grafana i utilitzacio en un host fisic. | Proves de implementacio en la maquina fisica. | 4 hores.
-02/05/2019 | Implementacio en docker. | Problemas a la hora de crear els containers dockers per als diferents serveis que necesita Grafana. | 6 hores.
+02/05/2019 | Implementación en docker. | Problemas a la hora de crear los contenedores dockers para los diferentes servicios que necesita Grafana. | 6 hores.
 03/05/2019 | Examen de sistemes (Docker). | Examen de sistemes (Docker). | 4 hores.
-06/05/2019 | Documentacio de Grafana,influxdb,telegraf | investigacio de influxDB | 2 hores.
+06/05/2019 | Documentación de Grafana,influxdb,telegraf | investigación de influxDB | 2 hores.
 07/05/2019 | Examen base de dades MongoDB | Examen base de dades MongoDB | 3 hores.
 08/05/2019 | Documentación | Documentación de Grafana,influxdb y telegraf | 3 hores.
-
+09/05/2019 | Documentación | Documentación de influxdb y telegraf | 6 hores.

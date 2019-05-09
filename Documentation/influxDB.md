@@ -110,4 +110,21 @@ Enter an InfluxQL query
 	time                host    value
 	----                ----    -----
 	1557396283942172538 serverA 0.64
-  ```
+ ```
+
+## Conceptos a tener en cuenta de la base de datos:
+
+```
+		1. show databases        show database names
+        2. show series           show series information
+        3. show measurements     show measurement information
+        4. show tag keys         show tag key information
+        5. show field keys       show field key information
+```
+
+
+
+
+
+
+
