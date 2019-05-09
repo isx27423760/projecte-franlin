@@ -42,3 +42,72 @@ field set, timestamp, se sobreesciben los valores en field set con los datos del
 - La base de datos puede gestionar un gran volumen de lecturas y escrituras, priorizandolas sobre la vista de los datos.
 
 - No está soportado el uso de joins entre tablas.
+
+### Ejemplo de ordenes basicas de ejecucion en InfluxDB
+
+Primero ponemos en marcha el servidor con el siguiente comando:
+```
+# /usr/bin/influxd -pidfile /var/run/influxdb/influxd.pid -config /etc/influxdb/influxdb.conf
+
+ 8888888           .d888 888                   8888888b.  888888b.
+   888            d88P"  888                   888  "Y88b 888  "88b
+   888            888    888                   888    888 888  .88P
+   888   88888b.  888888 888 888  888 888  888 888    888 8888888K.
+   888   888 "88b 888    888 888  888  Y8bd8P' 888    888 888  "Y88b
+   888   888  888 888    888 888  888   X88K   888    888 888    888
+   888   888  888 888    888 Y88b 888 .d8""8b. 888  .d88P 888   d88P
+ 8888888 888  888 888    888  "Y88888 888  888 8888888P"  8888888P"
+
+2019-05-09T09:48:00.097569Z	info	InfluxDB starting	{"log_id": "0FI~iptG000", "version": "1.7.6", "branch": "1.7", "commit": "01c8dd416270f424ab0c40f9291e269ac6921964"}
+
+.............more lines ....................................................
+```
+Luego entramos dentro del sell del servidor para realizar modificaciones,consultas,etc.
+
+```
+[root@56f4bbfcf5ce /]# influx
+Connected to http://localhost:8086 version 1.7.6
+InfluxDB shell version: 1.7.6
+Enter an InfluxQL query
+> 
+```
+
+- Create database : para crear una base de datos en influxdb 
+	ejecutamos la siguiente orden.
+	
+	```
+	> CREATE DATABASE test
+	```
+
+- Mostrar las base de datos que tenemos en nuestro servidor.
+
+	```
+	> SHOW DATABASES
+	name: databases
+	name
+	----
+	_internal
+	statsdemo
+	test
+	```
+- Entramos en la nueva base de datos creado anteriormente.
+
+	```
+	> USE test
+	Using database test
+	```
+- Inertamos datos de prueba 
+
+	```
+	INSERT cpu,host=serverA value=0.64
+	```
+- El comando de Insert no produce ningún output, pero deberíamos poder 
+  ver los datos cuando realizas una consulta:
+  
+  ```
+	> select * from cpu
+	name: cpu
+	time                host    value
+	----                ----    -----
+	1557396283942172538 serverA 0.64
+  ```

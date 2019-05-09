@@ -10,9 +10,13 @@ Construimos la imagen de grafana
 ```
 Ejecutamos la imagen docker con el puerto 3000 ya mapeado
 ```
-# docker run --rm -p 3000:3000 --name grafana.server -h grafana.server -d grafana:19
+# docker run --rm -p 3000:3000 --name grafana.server -h grafana.server -d grafana:server
 ```
 
+Ahora probamos en el navegador web:
 
+```
+ip-docker:3000
+```
 
 
