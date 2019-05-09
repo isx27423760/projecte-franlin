@@ -3,5 +3,4 @@
 # crear i engegar server
 #--------------------------------------
 #/opt/docker/install.sh && echo "Install OK"
-/usr/sbin/grafana-server
-
+/usr/bin/influxd
