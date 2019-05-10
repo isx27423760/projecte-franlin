@@ -13,4 +13,4 @@ Dia | Objectius de tasca a realitzar | comentaris | Hores realitzades
 07/05/2019 | Examen base de dades MongoDB | Examen base de dades MongoDB | 3 hores.
 08/05/2019 | Documentación | Documentación de Grafana,influxdb y telegraf | 3 hores.
 09/05/2019 | Documentación | Documentación de influxdb y telegraf | 6 hores.
-09/05/2019 | Documentación | Investigación de telegraf | 3.5 hores.
+10/05/2019 | Documentación | Investigación de telegraf | 3.5 hores.
