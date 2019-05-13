@@ -1,6 +1,6 @@
 # Version: 0.0.1
 # @edt M14 2018-2019
-# ldapserver edt.org to monitoring
+# ldapserver grafana.org to monitoring
 # -------------------------------------
 FROM fedora:27
 RUN dnf -y install procps openldap-clients openldap-servers vim nmap

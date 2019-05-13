@@ -50,11 +50,23 @@
 
 - **Diferencia entre series y medidas en nifluxDB ?**
 
-- **Series , measurenments , diferencias entre tag keys y field keys?**
+	La medición actúa como un contenedor para etiquetas, campos y la columna de tiempo, y el nombre de la medición es la descripción 
+	de los datos que se almacenan en los campos asociados. Los nombres de medición son cadenas y, para cualquier usuario de SQL, una 
+	medición es conceptualmente similar a una tabla. La única medida en la muestra de datos es el censo. 
+
+	Una sola medida puede pertenecer a diferentes políticas de retención. 
+	Una política de retención describe cuánto tiempo InfluxDB conserva los datos (DURACIÓN) y cuántas copias de estos datos se almacenan en el clúster (REPLICACIÓN).
+
+- **diferencias entre tag keys y field keys?**
+	InfluxDB permite especificar fields y tags, siendo ambos pares key / value, donde la diferencia es que los tags se indexan automáticamente.
+
+- **Que son las metricas?**
+	una propiedad que medimos.
 
 
 
 ## Telgraf :
+
 
 Telegraf es un agente para recopilar, procesar, agregar y escribir métricas.
 Los objetivos de diseño son tener una huella de memoria mínima con un sistema de 
@@ -65,3 +77,6 @@ Telegraf es impulsado por complementos y tiene el concepto de 4 tipos de complem
 	* Processor Plugins: Transformar, decorar y / o filtrar métricas.
 	* Aggregator Plugins: crean métricas agregadas (por ejemplo, media, mínima, máxima, cuantiles, etc.)
 	* Output Plugins: escribir métricas a varios destinos
+	
+
+

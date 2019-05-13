@@ -71,7 +71,7 @@ Ejecutamos la imagen docker con el puerto 389 ya mapeado
 Ejecutamos la siguiente orden para ver que funciona:
 
 ```
-$ ldapsearch -x -h 172.17.0.2 -D 'cn=Manager,dc=edt,dc=org' -w  secret -b 'cn=Monitor' -s base 1.1
+$ ldapsearch -x -h 172.17.0.2 -D 'cn=Manager,dc=grafana,dc=org' -w  secret -b 'cn=Monitor' -s base 1.1
 # extended LDIF
 #
 # LDAPv3
