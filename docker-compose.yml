@@ -1,0 +1,66 @@
+version: "3"
+services:
+  grafana:
+    build:
+      context: $PWD/dockerGrafana/
+      dockerfile: Dockerfile
+    container_name: grafana.server
+    hostname: grafana.server
+    ports:
+      - "3000:3000"
+    networks:
+      _net:
+       ipv4_address: 172.41.0.2
+  
+  influxdb:
+    build:      
+      context: $PWD/dockerInfluxDB/
+      dockerfile: Dockerfile
+    container_name: influxdb.server
+    hostname: influxdb.server
+    ports: 
+      - "8086:8086"
+      - "8088:8088"
+    networks:
+      _net:
+       ipv4_address: 172.41.0.3
+  
+  telegraf:
+   image: telegraf
+   container_name: telegraf
+   hostname: telegraf
+   restart: always
+   extra_hosts:
+     - "influxdb:172.41.0.3"
+     - "openldap:172.41.0.5"
+   environment:
+     HOST_PROC: /rootfs/proc
+     HOST_SYS: /rootfs/sys
+     HOST_ETC: /rootfs/etc
+   volumes:
+    - /home/king/projecte-franlin/telegraf.conf:/etc/telegraf/telegraf.conf:ro
+    - /var/run/docker.sock:/var/run/docker.sock:ro
+    - /sys:/rootfs/sys:ro
+    - /proc:/rootfs/proc:ro
+    - /etc:/rootfs/etc:ro
+   networks:
+     _net:
+       ipv4_address: 172.41.0.4
+  
+  ldap:
+   build:      
+      context: $PWD/LDAPmonitoring/
+      dockerfile: Dockerfile
+   container_name: ldap.server
+   hostname: ldap.server
+   ports: 
+     - "389:389"
+   networks:
+     _net:
+       ipv4_address: 172.41.0.5
+networks:
+  _net:
+   driver: bridge
+   ipam:
+    config:
+      - subnet: 172.41.0.0/16
