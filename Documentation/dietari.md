@@ -15,3 +15,5 @@ Dia | Objetivos de tareas a realizar | comentarios | Horas realizadas
 09/05/2019 | Documentación | Documentación de influxdb y telegraf | 6 hores.
 10/05/2019 | Documentación | Investigación de telegraf | 3.5 hores.
 13/05/2019 | Investigación | Investigación del fichero de configuración de telegraf | 2 hores.
+14/05/2019 | Investigación | Investigación del fichero de configuración de telegraf | 3 hores.
+15/05/2019 | implemetar Telegraf en un docekr | Ejecutar telegraf en un fichero de telegraf  | 2 hores.
