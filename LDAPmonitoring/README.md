@@ -56,7 +56,7 @@ access to *
 
 #### Executing
 
-Contruimos la imagen Docker:
+Construimos la imagen Docker:
 
 ```
 # docker build -t "ldap:19server" .
