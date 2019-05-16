@@ -1,5 +1,6 @@
 version: "3"
 services:
+  #Servidor Grafana
   grafana:
     build:
       context: $PWD/dockerGrafana/
@@ -11,7 +12,7 @@ services:
     networks:
       _net:
        ipv4_address: 172.41.0.2
-  
+  #Servidor InfluxDB
   influxdb:
     build:      
       context: $PWD/dockerInfluxDB/
@@ -24,7 +25,7 @@ services:
     networks:
       _net:
        ipv4_address: 172.41.0.3
-  
+  #Telegraf
   telegraf:
    image: telegraf
    container_name: telegraf
@@ -33,12 +34,13 @@ services:
    extra_hosts:
      - "influxdb:172.41.0.3"
      - "openldap:172.41.0.5"
+     - "www.virtual.com:172.41.0.6"
    environment:
      HOST_PROC: /rootfs/proc
      HOST_SYS: /rootfs/sys
      HOST_ETC: /rootfs/etc
    volumes:
-    - /home/king/projecte-franlin/telegraf.conf:/etc/telegraf/telegraf.conf:ro
+    - ./telegraf.conf:/etc/telegraf/telegraf.conf:ro
     - /var/run/docker.sock:/var/run/docker.sock:ro
     - /sys:/rootfs/sys:ro
     - /proc:/rootfs/proc:ro
@@ -46,7 +48,7 @@ services:
    networks:
      _net:
        ipv4_address: 172.41.0.4
-  
+  #Servidor OpenLDAP
   ldap:
    build:      
       context: $PWD/LDAPmonitoring/
@@ -58,6 +60,19 @@ services:
    networks:
      _net:
        ipv4_address: 172.41.0.5
+  #Servidor HTTP
+  httpd:
+   build:
+      context: $PWD/HTTPmonitoring/
+      dockerfile: Dockerfile
+   container_name: www.myserver.org
+   hostname: www.myserver.org
+   ports: 
+     - "80:80"
+   networks:
+     _net:
+       ipv4_address: 172.41.0.6
+   
 networks:
   _net:
    driver: bridge
