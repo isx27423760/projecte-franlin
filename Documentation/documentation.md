@@ -1,4 +1,4 @@
-# Documentacion del Projecto
+# Documentación del Proyecto
 
 El projecto consiste en general en la monitorizacion de la infraestructura 
 como por ejemplo de una empresa o entidad y lo empleare con Grafana.
@@ -21,11 +21,10 @@ permite tambien crear cuadros de mando y gráficos a partir de múltiples fuente
 
 El objetivo principal de Grafana es de representar los datos de monitoreo, la cual es
 es recolectada y/o procesada por aplicaciones de terceros, de una manera más facil
-de usar. Puede recopilar de forma nativa datos de Cloudwatch, Graphite, Elasticsearch, OpenTSDB, Prometheus, Hosted Metrics e InfluxDB.
+de usar. Puede recopilar de forma nativa datos de Cloudwatch, Graphite, Elasticsearch, OpenTSDB, Prometheus, Hosted Metrics e **InfluxDB**.
 
-Es verdad que hay una version de pago de Grafana , pero lo que yo utilizare sera todo
+Es verdad que hay una version de pago de Grafana,pro lo que yo utilizare sera todo
 open source.
-
 
 ## planing del proyecto 
 

@@ -5,7 +5,7 @@
 - grupo: hisx2.
 - EDT ASIX M14 - Barcelona.
 
-### Proposito del proyecto
+## Proposito del proyecto
 
 Grafana es una herramienta de código abierto para el análisis y visualización de métricas. 
 Se utiliza frecuentemente para visualizar de una forma elegante series de datos en el análisis de infraestructuras y aplicaciones.
@@ -31,7 +31,9 @@ Estudiar el funcionamiento de grafana i presentar ejemplos de utilización. Inte
 
 - Implementación en docker de los servicios mencionados: Grafana, InfluxDB , Telegraf y los servidores a monitorizar.
 
-## Documentación extensa del proyecto
+## Documentación 
+
+La [documentación](https://github.com/isx27423760/projecte-franlin/blob/master/Documentation/documentation.md) del proyecto.
 
 ## Planificación 
 

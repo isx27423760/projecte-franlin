@@ -16,5 +16,7 @@ Dia | Objetivos de tareas a realizar | comentarios | Horas realizadas
 10/05/2019 | Documentación | Investigación de telegraf | 3.5 hores.
 13/05/2019 | Investigación | Investigación del fichero de configuración de telegraf | 2 hores.
 14/05/2019 | Investigación | Investigación del fichero de configuración de telegraf | 3 hores.
-15/05/2019 | implemetar Telegraf en un docker | Ejecutar telegraf en un fichero de telegraf  | 2 hores.
-15/05/2019 | implemetar un servidor HTTP  | Ejecutar telegraf para monitorear el servidor HTTP  | 4 hores.
+15/05/2019 | implemetar Telegraf en un docker | Imagen ya preconfigurada de dockerhub para telegraf  | 2 hores.
+16/05/2019 | implemetar un servidor HTTP  | Ejecutar telegraf para monitorear el servidor HTTP  | 4 hores.
+17/05/2019 | implemetar un servidor HTTP  | Resolver problemas de permisos para acceder al servidor HTTP  | 3 hores.
+18/05/2019 | Documetación  | Documentar y hacer canvios en el README de github  | 6 hores.
