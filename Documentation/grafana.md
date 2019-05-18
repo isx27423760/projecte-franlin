@@ -45,7 +45,7 @@ Haremos clic en ‘Add data source‘.
 Por ejemplo, agregaremos una base de datos InfluxDB. Especificaremos el nombre de la fuente de datos, 
 el tipo y los parámetros de conexión. Después haremos clic en Save and Test.
 
-![influx](img/add-Influx.jpg)
+![influx](img/add_Influx.jpg)
 
 
 Desde el panel de Inicio, haremos clic en New Panel para agregar uno nuevo. 
