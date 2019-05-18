@@ -116,7 +116,7 @@ Enter an InfluxQL query
 ## Conceptos a tener en cuenta de la base de datos:
 
 ```
-		1. show databases        show database names
+        1. show databases        show database names
         2. show series           show series information
         3. show measurements     show measurement information
         4. show tag keys         show tag key information
@@ -137,16 +137,16 @@ En Cuanto a la estructura :
 
 ```
 
-		SQL table											||	InfluxDB measurenmets (table)
-															||
+        SQL table                                           ||  InfluxDB measurenmets (table)
+                                                            ||
 +---------+---------+---------------------+--------------+  ||  name: foodships    
 | park_id | planet  | time                | #_foodships  |  ||  tags: park_id=1, planet=Earth
-+---------+---------+---------------------+--------------+  ||  time			         #_foodships
-|       1 | Earth   | 1429185600000000000 |            0 |  ||  ----			         ------------
-|       1 | Earth   | 1429185601000000000 |            3 |  ||  2015-04-16T12:00:00Z	 0
-|       1 | Earth   | 1429185602000000000 |           15 |  ||  2015-04-16T12:00:01Z	 3
-|       1 | Earth   | 1429185603000000000 |           15 |  ||  2015-04-16T12:00:02Z	 15
-+---------+---------+---------------------+--------------+  ||  2015-04-16T12:00:03Z	 15
++---------+---------+---------------------+--------------+  ||  time                     #_foodships
+|       1 | Earth   | 1429185600000000000 |            0 |  ||  ----                     ------------
+|       1 | Earth   | 1429185601000000000 |            3 |  ||  2015-04-16T12:00:00Z     0
+|       1 | Earth   | 1429185602000000000 |           15 |  ||  2015-04-16T12:00:01Z     3
+|       1 | Earth   | 1429185603000000000 |           15 |  ||  2015-04-16T12:00:02Z     15
++---------+---------+---------------------+--------------+  ||  2015-04-16T12:00:03Z     15
 
 ```
 En resúmen:
