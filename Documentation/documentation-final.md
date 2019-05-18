@@ -18,7 +18,7 @@ datos para su posterior visualización con Grafana
 			una cantidad importante de información
 
 
-* Grafana: Es el Dashboard que se encargara de mostrar toda la información que InfluxDB tiene 
+* [Grafana](https://github.com/isx27423760/projecte-franlin/blob/master/Documentation/grafana.md): Es el Dashboard que se encargara de mostrar toda la información que InfluxDB tiene 
            almacenado en las Bases de Datos en forma de gráficas que se podran configurar 
            facilmente.
 
@@ -46,7 +46,20 @@ Para la instalación y puesta en marcha de los servicios ver este HowToInstall.
 
 ### Esquema de la infraestructura a montar:
 
-![grafica](/img/graf-inf-tele.png)
+![grafica](img/graf-inf-tele.png)
+
+### Instalación de Telegraf 
+
+Para poder instalar telegraf en su host utilize este HowTO.
+
+### Instalación de InfluxDB
+
+Para poder instalar InfluxDB en su host utilize este HowTO.
+
+### Instalación de Grafana
+
+Para poder instalar Grafana en su host utilize este HowTO.
+
 
 
 

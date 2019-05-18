@@ -184,8 +184,19 @@ ejemplo:
    8      32 sdc 2157 16285 21271 5691 14 0 17 3727 0 5375 9418
 ```
 
+### Puesta en marcha de Telegraf
 
+Con el siguiente comando generamos el [fichero de configuración](https://github.com/isx27423760/projecte-franlin/blob/master/telegraf.conf) principal
+de telegraf y que le pasara a influxDB. 
 
+```
+telegraf -sample-config -input-filter cpu:mem:disk -output-filter influxdb > telegraf.conf
+```
+
+Y con el siguiente comando ponemos en marcha el servicio con la configuración que le pasemos. 
+```
+telegraf --config telegraf.conf	
+```
 
 
 
