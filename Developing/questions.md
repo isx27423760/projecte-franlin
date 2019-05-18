@@ -42,7 +42,7 @@
 
 - **Telegraf es configurable , cuantos campos si es que es configurable?**
 
-
+	si telegraf es configurable: tiene cuatro configuracion(Agent,Plugins (input,output,processor,aggregator))
 
 - **Que son las series en influxdb?**
 

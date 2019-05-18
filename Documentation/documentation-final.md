@@ -61,7 +61,7 @@ Para poder instalar InfluxDB en su host utilize este HowTO.
 Para poder instalar Grafana en su host utilize este HowTO.
 
 
-
+Docker Compose poner en marcha los servidores y lo que demas.
 
 
 

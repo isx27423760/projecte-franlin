@@ -18,7 +18,7 @@ pueden estar en distintos hosts.
 * Escrito en Go. Se compila en un único binario sin dependencias externas.
 * Consumo mínimo de memoria.
 * Sistema de plugin que permite una fácil inserción de nuevos inputs y outputs.
-* Gran numero de plgugins para la mayoría de los servicios mas populares y APIs.
+* Gran número de plugins para la mayoría de los servicios mas populares y APIs.
 
 ### Formatos de Output Data 
 
@@ -198,9 +198,67 @@ Y con el siguiente comando ponemos en marcha el servicio con la configuración q
 telegraf --config telegraf.conf	
 ```
 
+### Cofiguración 
 
+En la mayoría de los sistemas, la ubicación del archivo se encuentran en :
+**/etc/telegraf/telegraf.conf**
 
+#### Elementos importantes  del fichero de configuración
 
+- **Agent**: La tabla de agentes configura Telegraf y los valores predeterminados utilizados en todos los complementos, en esta parta 
+			 puedes configurar un intervalo de tiempo de recoleción de los datos,tambien los logs, el limite de buffer de las metricas,etc.
+
+- **Plugins**: los plugins en Telegraf estan separados en cuatro partes **Inputs,Outputs,Processors y Aggregators.**
+			  Solamente aplicare los inputs y outputs plugins. 
+
+#### Inputs Plugins
+
+Los complementos de entrada son los que reúnen y crean métricas
+
+Y tiene estas caracteristica:
+
+- Interval (la frecuencia con que reune métricas)
+- name_override (Sobreescribe el nombre por defecto de la medida)
+
+y otras como name_prefix,name_suffix y tags.
+
+Ejemplo de un Input plugin:
+
+```
+[[inputs.openldap]]
+  host = "172.17.0.2"
+  port = 389
+
+  # ldaps, starttls, or no encryption. default is an empty string, disabling all encryption.
+  # note that port will likely need to be changed to 636 for ldaps
+  # valid options: "" | "starttls" | "ldaps"
+  tls = ""
+
+  # skip peer certificate verification. Default is false.
+  insecure_skip_verify = false
+
+  # Path to PEM-encoded Root certificate to use to verify server certificate
+  tls_ca = "/etc/ssl/certs.pem"
+
+  # dn/password to bind with. If bind_dn is empty, an anonymous bind is performed.
+  bind_dn = ""
+  bind_password = ""
+
+  # Reverse metric names so they sort more naturally. Recommended.
+  # This defaults to false if unset, but is set to true when generating a new config
+  reverse_metric_names = true
+```
+
+#### Outputs Plugins
+
+Son los que escriben y/o envian las métricas en algun lugar en mi caso a Influxdb.
+
+Ejemplo:
+```
+[[outputs.influxdb]]
+  urls = [ "http://0.0.0.0:8086" ]
+  database = "telegraf"
+```
 
 
 

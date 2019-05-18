@@ -1,21 +1,21 @@
-# Planificació del projecte
+# Planificación del proyecto
 
-## 1a setmana 
+## 1a semana
 
-- Estructuració i planificació del projecte Grafana.
+- Estructuración i planificación del proyecto Grafana.
 
-- Construcció de la BBDD en influxDB i recopilacio de la informacion en telegraf. 
+- Construcción de la BBDD en influxDB i recopilación de la información en telegraf. 
 
-## 2a setmana 
+## 2a semana
 
-- Creació del servidor ldap para su posterior analisis.
+- Creación del servidor ldap para su posterior análisis.
 
-- Implementació dels serveis en docker. 
+- Implementación de los servicios en docker. 
 
-## 3a setmana 
+## 3a semana
 
-- Solucio de problemas que poden sorgir.
+- Solución de problemas que pueden surgir.
 
-## 4a setmana 
+## 4a semana
 
-- Preparacio per la presentacio del projecte.
+- Preparación para la presentación del proyecto.

@@ -3,7 +3,7 @@
 
 Servidor http, para su posterior monitorea con Grafana.
 Telegraf  recopila información de rendimiento del servidor mediante el módulo 
-**mod_status** del servidor HTTP de Apache.
+[mod_status](https://httpd.apache.org/docs/2.4/mod/mod_status.html) del servidor HTTP de Apache.
 
 El **mod_status** permite al administrador del servidor averiguar qué tan 
 bien está funcionando el servidor. Se presenta una página HTML que proporciona las 
@@ -31,7 +31,7 @@ ExtendedStatus On
 </Location>
 ```
 
-**ExtendedStatus On ** : Es para que muestra información adicional de nuestro servidor httpd.
+**ExtendedStatus On** : Es para que muestra información adicional de nuestro servidor httpd.
 
 **Allow from all** :  Permisos para que desde fuera del servidor podamos consultar el estado de nuestro web.
 

@@ -13,7 +13,7 @@ servidor LDAP.
 1. **Via cn=config**
 2. **Via slapd.conf**
 
-Utilizare la segunda opción ya que hay mas documentacion en el manual de **openldap**
+Utilizare la segunda opción ya que hay mas documentacion en el manual de [openldap](https://www.openldap.org/doc/admin24/monitoringslapd.html).
 
 **Configuracion de monitorep via slapd.conf**
 

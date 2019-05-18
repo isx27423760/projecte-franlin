@@ -43,6 +43,8 @@ field set, timestamp, se sobreesciben los valores en field set con los datos del
 
 - No está soportado el uso de joins entre tablas.
 
+- Los puertos InfluxDB en el interfaz web de cliente (8083) y el del API de la propia base de datos (8086).
+
 ### Ejemplo de ordenes basicas de ejecucion en InfluxDB
 
 Primero ponemos en marcha el servidor con el siguiente comando:
@@ -110,7 +112,6 @@ Enter an InfluxQL query
 	time                host    value
 	----                ----    -----
 	1557396283942172538 serverA 0.64
- ```
 
 ## Conceptos a tener en cuenta de la base de datos:
 
@@ -122,8 +123,38 @@ Enter an InfluxQL query
         5. show field keys       show field key information
 ```
 
+## Diferencias entre InfluxDB i una base de datos SQL
 
+InfluxDB está hecho para trabajar con datos de series de tiempo. 
+Las bases de datos SQL pueden manejar series de tiempo, pero no se crearon 
+estrictamente para ese propósito. 
+En resumen, InfluxDB está diseñado para almacenar un gran volumen de datos de 
+series de tiempo y realizar análisis en tiempo real de esos datos.
 
+En InfluxDB no tiene que definir esquemas por adelantado.
+
+En Cuanto a la estructura :
+
+```
+
+		SQL table											||	InfluxDB measurenmets (table)
+															||
++---------+---------+---------------------+--------------+  ||  name: foodships    
+| park_id | planet  | time                | #_foodships  |  ||  tags: park_id=1, planet=Earth
++---------+---------+---------------------+--------------+  ||  time			         #_foodships
+|       1 | Earth   | 1429185600000000000 |            0 |  ||  ----			         ------------
+|       1 | Earth   | 1429185601000000000 |            3 |  ||  2015-04-16T12:00:00Z	 0
+|       1 | Earth   | 1429185602000000000 |           15 |  ||  2015-04-16T12:00:01Z	 3
+|       1 | Earth   | 1429185603000000000 |           15 |  ||  2015-04-16T12:00:02Z	 15
++---------+---------+---------------------+--------------+  ||  2015-04-16T12:00:03Z	 15
+
+```
+En resúmen:
+
+- Una medida(measurenmets) en InfluxDB es similar a una tabla de SQL
+- Los tags(etiquetas) InfluxDB (park_id y planet) son como columnas indexadas en una base de datos SQL.
+- Los fields(campos) de InfluxDB (#_foodships) son como columnas no indexadas en una base de datos SQL.
+- Los points(puntos) en InfluxDB (por ejemplo, 2015-04-16T12: 00: 00Z 0) son similares a las filas de SQL.
 
 
 
