@@ -33,7 +33,7 @@ Estudiar el funcionamiento de grafana i presentar ejemplos de utilización. Inte
 
 ## Documentación 
 
-La [documentación](https://github.com/isx27423760/projecte-franlin/blob/master/Documentation/documentation.md) del proyecto.
+La [documentación](https://github.com/isx27423760/projecte-franlin/blob/master/Documentation/documentation-final.md) del proyecto.
 
 ## Planificación 
 
