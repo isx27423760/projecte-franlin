@@ -50,7 +50,7 @@ Para la instalación y puesta en marcha de los servicios ver estas documentació
 
 ### Esquema de la infraestructura a montar con Dockers:
 
-![grafica](img/estructura2.jpg)
+![grafica](img/esturctura2.jpg)
 
 ### Puesta en marcha 
 
@@ -222,7 +222,7 @@ PORT     STATE SERVICE
 	
 	Tambien podem comprovar el estado del servidor HTTP en el navegador:
 	
-	![http](img/http-server.png)
+	![http](img/http-status.png)
 
 #### Comprovación de Telegraf
 
