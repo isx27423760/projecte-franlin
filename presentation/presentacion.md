@@ -44,7 +44,7 @@ no es un como un snapshot como tal pero es algo que recogemos y los subimos a un
 
 ## Anatomia de una Métrica
 
-![metrica](img/metrica.jpg)
+![metrica](metrica.jpg)
 
 --
 

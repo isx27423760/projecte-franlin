@@ -156,5 +156,37 @@ Que recoger
 
 
 
+############################
+
+Que es monitoreo?
+
+Un monitorización es la herramineta y proceso que mide y administra nuestros sistemas
+
+Por que es necesario la monitorización?
+
+* disponibilidad (si esta up or down)
+* Deteccion  de fallos. (si el servidor esta funcionando correctamente)
+* planificación de capacidades(ver si money)
+* Alertas(avisar cualquier imprevisto)
+
+componentes de una monitorización
+
+* Dato(medida)
+* Recolector
+* Almacenamiento
+* Herraminetas de Visualización
+
+
+Que es Grafana?
+
+muchas origenes de almacenamiento: Graphite influxdb Prometheus Elastichsearch
+
+pros:
+	* Open Source
+	* Web based
+	* Support Windows installation
+	* Muchos Origenes de datos.
+	* Facil de utilizar y brillante
+	* Control de Acceso amplio
 
 
