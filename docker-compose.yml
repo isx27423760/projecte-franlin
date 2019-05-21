@@ -11,8 +11,8 @@ services:
       - "3000:3000"
     volumes:
     # Data persistency
-    # sudo mkdir -p /srv/docker/grafana/data; chown 472:472 /srv/docker/grafana/data
-      - /srv/docker/grafana/data:/var/lib/grafana
+    # sudo mkdir -p /srv/docker/grafana/data (chown 472:472 /srv/docker/grafana/data)
+      - /srv/docker/grafana/data:/usr/share/grafana/data
     networks:
       _net:
        ipv4_address: 172.41.0.2
