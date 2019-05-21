@@ -9,6 +9,10 @@ services:
     hostname: grafana.server
     ports:
       - "3000:3000"
+    volumes:
+    # Data persistency
+    # sudo mkdir -p /srv/docker/grafana/data; chown 472:472 /srv/docker/grafana/data
+      - /srv/docker/grafana/data:/var/lib/grafana
     networks:
       _net:
        ipv4_address: 172.41.0.2
@@ -22,6 +26,10 @@ services:
     ports: 
       - "8086:8086"
       - "8088:8088"
+    volumes:
+    # Data persistency
+    # sudo mkdir -p /srv/docker/influxdb/data
+      - /srv/docker/influxdb/data:/var/lib/influxdb
     networks:
       _net:
        ipv4_address: 172.41.0.3
