@@ -19,4 +19,6 @@ Dia | Objetivos de tareas a realizar | comentarios | Horas realizadas
 15/05/2019 | implemetar Telegraf en un docker | Imagen ya preconfigurada de dockerhub para telegraf  | 2 hores.
 16/05/2019 | implemetar un servidor HTTP  | Ejecutar telegraf para monitorear el servidor HTTP  | 4 hores.
 17/05/2019 | implemetar un servidor HTTP  | Resolver problemas de permisos para acceder al servidor HTTP  | 3 hores.
-18/05/2019 | Documetación  | Documentar y hacer canvios en el README de github  | 6 hores.
+18/05/2019 | Documetación  | Documentar y hacer cambios en el README de github  | 6 hores.
+20/05/2019 | Documetación  | Documentar y hacer cambios en el README de github  | 3 hores.
+21/05/2019 | Grafana  | Hacer que los datos de Grafana y InfluxDB sean perdurables  | 4 hores.
