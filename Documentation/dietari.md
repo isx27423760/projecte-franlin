@@ -22,3 +22,4 @@ Dia | Objetivos de tareas a realizar | comentarios | Horas realizadas
 18/05/2019 | Documetación  | Documentar y hacer cambios en el README de github  | 6 hores.
 20/05/2019 | Documetación  | Documentar y hacer cambios en el README de github  | 3 hores.
 21/05/2019 | Grafana  | Hacer que los datos de Grafana y InfluxDB sean perdurables  | 4 hores.
+22/05/2019 | Docker Compose  | Hacer que los datos de Grafana y InfluxDB sean perdurables  | 4 hores.
