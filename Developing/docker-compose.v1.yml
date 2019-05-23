@@ -13,7 +13,8 @@ services:
     # Data persistency
       - "grafana_data:/usr/share/grafana/data"
     networks:
-     - mynet
+      _net:
+       ipv4_address: 172.41.0.2
   #Servidor InfluxDB
   influxdb:
     build:      
@@ -28,13 +29,18 @@ services:
     # Data persistency
       - "influxdb_data:/var/lib/influxdb"
     networks:
-     - mynet
+      _net:
+       ipv4_address: 172.41.0.3
   #Telegraf
   telegraf:
    image: telegraf
    container_name: telegraf
    hostname: telegraf
    restart: always
+   extra_hosts:
+     - "influxdb:172.41.0.3"
+     - "openldap:172.41.0.5"
+     - "www.virtual.com:172.41.0.6"
    environment:
      HOST_PROC: /rootfs/proc
      HOST_SYS: /rootfs/sys
@@ -46,7 +52,8 @@ services:
     - /proc:/rootfs/proc:ro
     - /etc:/rootfs/etc:ro
    networks:
-     - mynet
+     _net:
+       ipv4_address: 172.41.0.4
   #Servidor OpenLDAP
   ldap:
    build:      
@@ -57,7 +64,8 @@ services:
    ports: 
      - "389:389"
    networks:
-     - mynet
+     _net:
+       ipv4_address: 172.41.0.5
   #Servidor HTTP
   httpd:
    build:
@@ -68,9 +76,14 @@ services:
    ports: 
      - "80:80"
    networks:
-     - mynet
+     _net:
+       ipv4_address: 172.41.0.6
 volumes:
   grafana_data:
   influxdb_data:
 networks:
-  mynet:
+  _net:
+   driver: bridge
+   ipam:
+    config:
+- subnet: 172.41.0.0/16

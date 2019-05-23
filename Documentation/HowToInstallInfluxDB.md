@@ -6,14 +6,15 @@ en nuestro systema fedora27:
 * Instalar paquete de  InfluxDB .
 
 	En primer lugar debemos agregar el repositorio de InfluxDB a nuestra maquina.
-	```
-	[influxdb]
-	name = InfluxDB Repository - RHEL 
-	baseurl = https://repos.influxdata.com/rhel/7/x86_64/stable/
-	enabled = 1
-	gpgcheck = 1
-	gpgkey = https://repos.influxdata.com/influxdb.key
-	```
+```
+#vim /etc/yum.repos.d/influxdb.repo
+[influxdb]
+name=InfluxDB Repository - RHEL 
+baseurl = https://repos.influxdata.com/rhel/7/x86_64/stable/
+enabled = 1
+gpgcheck = 1
+gpgkey = https://repos.influxdata.com/influxdb.key
+```
 	Despues instalamos el paquete:
 	```
 	#dnf -y install influxdb
