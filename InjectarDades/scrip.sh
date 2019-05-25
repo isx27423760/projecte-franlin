@@ -5,7 +5,7 @@
 
 systemctl > /var/tmp/injeccio/systemctl.txt
 
-python /var/tmp/injeccio/injeccio.py
+/usr/bin/python /var/tmp/injeccio/injeccio.py
 
-rm /var/tmp/injeccio/systemctl.txt
+#rm /var/tmp/injeccio/systemctl.txt
 
