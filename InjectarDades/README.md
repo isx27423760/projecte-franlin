@@ -1,4 +1,4 @@
-#Injectar datos
+# Injectar datos
 
 Para injectar datos propios a influxdb utilizare
 un python que tendra importado una libreria de influxDB,
