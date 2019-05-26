@@ -213,7 +213,7 @@ cpu_load_short,direction=in,host=server01,region=us-west value=2.0 1422568543702
 $ curl -i -XPOST 'http://localhost:8086/write?db=mydbs' --data-binary @cpu.txt
 ```
 
-Otra forma de crear e insertar medidas a una base de datos en influxdb es 
+Otra forma de crear e insertar medidas a una base de datos en influxdb 
 mediante un fichero es la siguiente:
 
 ```
@@ -233,7 +233,7 @@ treasures,captain_id=tetra value=47 1439856000
 treasures,captain_id=crunch value=109 1439858880
 ```
 
-Escribir a la base de datos con una presición desegundos:
+Escribir a la base de datos con una presición de segundos:
 ```
 #influx -import -path=pirates.txt -precision=s
 ```
