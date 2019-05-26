@@ -32,7 +32,7 @@ Por defecto el puerto HTTP es el 3000.
 El destino de los logs de grafana esta ubicado en /var/log/grafana.
 
 Si da problemas de Firewall aplicamos la siguiente orden para
-abrir el purto de grafana:
+abrir el puerto de grafana:
 
 ```
 #firewall-cmd --add-port=3000/tcp --permanent

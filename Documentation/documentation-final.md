@@ -69,9 +69,11 @@ services:
     hostname: grafana.server
     ports:
       - "3000:3000"
+    volumes:
+    # Data persistency
+      - "grafana_data:/usr/share/grafana/data"
     networks:
-      _net:
-       ipv4_address: 172.41.0.2
+     - mynet
   #Servidor InfluxDB
   influxdb:
     build:      
@@ -82,19 +84,17 @@ services:
     ports: 
       - "8086:8086"
       - "8088:8088"
+    volumes:
+    # Data persistency
+      - "influxdb_data:/var/lib/influxdb"
     networks:
-      _net:
-       ipv4_address: 172.41.0.3
+     - mynet
   #Telegraf
   telegraf:
    image: telegraf
    container_name: telegraf
    hostname: telegraf
    restart: always
-   extra_hosts:
-     - "influxdb:172.41.0.3"
-     - "openldap:172.41.0.5"
-     - "www.virtual.com:172.41.0.6"
    environment:
      HOST_PROC: /rootfs/proc
      HOST_SYS: /rootfs/sys
@@ -106,8 +106,7 @@ services:
     - /proc:/rootfs/proc:ro
     - /etc:/rootfs/etc:ro
    networks:
-     _net:
-       ipv4_address: 172.41.0.4
+     - mynet
   #Servidor OpenLDAP
   ldap:
    build:      
@@ -118,8 +117,7 @@ services:
    ports: 
      - "389:389"
    networks:
-     _net:
-       ipv4_address: 172.41.0.5
+     - mynet
   #Servidor HTTP
   httpd:
    build:
@@ -130,18 +128,15 @@ services:
    ports: 
      - "80:80"
    networks:
-     _net:
-       ipv4_address: 172.41.0.6
-   
+     - mynet
+volumes:
+  grafana_data:
+  influxdb_data:
 networks:
-  _net:
-   driver: bridge
-   ipam:
-    config:
-      - subnet: 172.41.0.0/16
+  mynet:
 ```
 
-Despues ponemos en marcha los servidores:
+Despues ponemos en marcha los servidores en modo datach:
 
 ```
 [isx27423760@localhost projecte-franlin]$ docker-compose up -d
@@ -226,8 +221,9 @@ PORT     STATE SERVICE
 
 #### Comprovación de Telegraf
 
-En la configuración de telegraf puse que las métricas recibidas lo guarde en 
-fichero con la extención JSON :
+En la configuración de telegraf puse que las métricas que recolecte las guarde en 
+un fichero con la extención JSON y haci poder comprobar si realmente esta 
+recibiendo metricas del systema  y/o de los servidores:
 
 ```
 $ cat /etc/telegraf/telegraf.conf
@@ -247,7 +243,7 @@ $ cat /etc/telegraf/telegraf.conf
   json_timestamp_units = "1s"
 ```
 
-vemos el fichero en texto plano entrando en contenedor Docker:
+vemos el fichero en texto plano entrando en el contenedor Docker de Telegraf:
 
 ```
 $ docker exec -it telegraf /bin/bash
@@ -334,12 +330,15 @@ system
 
 #### Comprovación de Grafana
 
-En el navegador nos conectamos a htttp://localhost:3000:
+En el navegador nos conectamos a htttp://localhost:3000, por defecto es el 
+puerto 3000, pero podria ser otro estableciendolo en el fichero de configuración
+de Grafana:
 
 ![grafana](img/loging.png)
 
-Una vez dentro, inciciamos sesioón con las credenciales por defecte
-que nos facilita grafana user:admin y password:admin y hacemos los siguientes pasos:
+Una vez dentro, inciciamos sesión con las credenciales por defecte
+que nos facilita grafana user:admin y password:admin y hacemos los siguientes pasos,
+posteriormente nos pide que establescamos una nueva contraseña:
 
 - Implementamos nuestra base de datos InfluxDB en Grafana:
 

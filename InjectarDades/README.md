@@ -27,7 +27,8 @@ que sera mutable y posteriormente ejecutara el programa en python
 de injectar los datos a la base de datos de InfluxDB.
 
 Este scrip se ejecutara cada 60 segundos con un crontab,lo que significa
-que cada minuto se injectaran datos del estado de los servicios e InfluxDB.
+que cada minuto se injectaran datos del estado de los servicios a InfluxDB,
+evidentemente el servidor influxdb previamente tiene que estar puesto en marcha.
 
 ```
 $ crontab -l

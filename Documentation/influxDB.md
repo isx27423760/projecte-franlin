@@ -4,6 +4,10 @@ Influxdb es un servidor de base de datos de series de tiempo (timeseries),
 ideal para logs o datos para gráficas que se generen en vivo, ademas tiene un rendimiento
 importante ante la entrada de grandes datos.
 
+Utiliza el puerto **8086** que es el puerto predeterminado que ejecuta el servicio HTTP InfluxDB
+y el puerto **8088** que es el predeterminado que ejecuta el servicio RPC para copia de seguridad y restauración 
+(esta utilidad del puerto es para una versión enterprise de pago del servicio InfluxDB).
+
 Programado en go permite la interacción via API HTTP(S) (JSON) e interficie web y los datos de gestionan con un lenguaje similar a SQL.
 
 **Conceptos basicos de InfluxDB**
@@ -157,5 +161,93 @@ En resúmen:
 - Los points(puntos) en InfluxDB (por ejemplo, 2015-04-16T12: 00: 00Z 0) son similares a las filas de SQL.
 
 
+## Interfaces de acceso
+
+El método de acceso para consultar y escribir datos es a través del API HTTP. 
+Hay dos utilidades básicas que permiten interactuar con InfluxDB:
+
+    * CLI / Shell
+    * HTTP API
+
+### CLI / Shell
+
+Es una utilidad que permite acceder a los datos a través de línea de comandos.
+Ejecutamos el comando influx para entrar en el modo interactivo.
+
+```
+[root@56f4bbfcf5ce /]# influx
+Connected to http://localhost:8086 version 1.7.6
+InfluxDB shell version: 1.7.6
+Enter an InfluxQL query
+> 
+```
+
+### HTTP API
+
+La API HTTP es el medio principal para escribir datos en InfluxDB.
+
+Ejemplos:
+
+- Crear una base de datos
+
+```
+$curl -i -XPOST http://localhost:8086/query --data-urlencode "q=CREATE DATABASE proves"
+```
+- Consultar una medida
+
+```
+$curl -i -XPOST http://localhost:8086/query --data-urlencode "q=SELECT * FROM cpu"
+
+```
+
+- Insert de datos de un fichero con medidas
+
+```
+$ cat cpu.txt
+cpu_load_short,host=server02 value=0.67
+cpu_load_short,host=server02,region=us-west value=0.55 1422568543702900257
+cpu_load_short,direction=in,host=server01,region=us-west value=2.0 1422568543702900257
+```
+
+```
+$ curl -i -XPOST 'http://localhost:8086/write?db=mydbs' --data-binary @cpu.txt
+```
+
+Otra forma de crear e insertar medidas a una base de datos en influxdb es 
+mediante un fichero es la siguiente:
+
+```
+$cat piratas.txt
+# DDL
+CREATE DATABASE pirates
+CREATE RETENTION POLICY oneday ON pirates DURATION 1d REPLICATION 1
+
+# DML
+# CONTEXT-DATABASE: pirates
+# CONTEXT-RETENTION-POLICY: oneday
+
+treasures,captain_id=dread_pirate_roberts value=801 1439856000
+treasures,captain_id=flint value=29 1439856000
+treasures,captain_id=sparrow value=38 1439856000
+treasures,captain_id=tetra value=47 1439856000
+treasures,captain_id=crunch value=109 1439858880
+```
+
+Escribir a la base de datos con una presición desegundos:
+```
+#influx -import -path=pirates.txt -precision=s
+```
+
+### Politica de retención de datos en influxdb
+
+Es la parte de la estructura de datos de InfluxDB que describe por cuánto 
+tiempo mantiene InfluxDB los datos (duración), cuántas copias de estos 
+datos se almacenan en el grupo (factor de replicación) y el rango de tiempo 
+cubierto por los grupos de fragmentos (duración del grupo de fragmentos). 
+Los RP son únicos por base de datos y, junto con la medición y el conjunto de etiquetas, 
+definen una serie.
+
+Cuando crea una base de datos, InfluxDB crea automáticamente una política de 
+retención llamada autogen con una duración infinita.
 
 

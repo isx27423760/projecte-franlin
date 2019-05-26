@@ -46,7 +46,7 @@ no es un como un snapshot como tal pero es algo que recogemos y los subimos a un
 
 ![metrica](metrica.jpg)
 
---
+---
 
 ## Métricas 2.0 Ejemplo
 
@@ -87,7 +87,6 @@ Una base de datos de series de tiempo (TSDB) es un sistema de software que está
 optimizado para el manejo de datos de series de tiempo, matrices de números 
 indexados por tiempo (una fecha o un rango de fecha y hora)
 
----
 
 
 
