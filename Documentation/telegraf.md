@@ -5,13 +5,12 @@ Puede recopilar datos del sistema en el que se ejecuta, como uso de disco, RAM, 
 carga del sistema, conexiones y muchos más, e incluye además una creciente 
 lista de plugins de entrada, como apache, consul, couchDB, Docker, Elasticsearch, 
 Fluentd, HAproxy, http POST, entre otros. Su salida la envía por lo general a una base 
-de datos InfluxDB, y es esta capacidad la que aprovecharemos en este tutorial.
+de datos InfluxDB, y es esta capacidad la que mostraremos en este proyecto.
 
 Por lo tanto,**Telegraf** es un agente ligero de recolección de datos, que esta escrito en go,
 su principal objectivo es la de enviar telemetria del sistema o de un server 
 a **InfluxDB** o a otro sitio, influxDB no tiene por que estar en el mismo host que telegraf
 pueden estar en distintos hosts.
-
 
 ### Características
 
@@ -29,7 +28,6 @@ de formatos de datos estándar que se pueden seleccionar al configurar muchos co
 * JSON que (que genera un fichero en formato json con los datos de las metricas recogidas del determinado servicio)
 
 y tambien hay formatos como **Graphite,SplunkMetric,Carbon2,Wavefront**.
-
 
 ### Ejemplo de recolección de datos de telegraf
 
@@ -108,7 +106,7 @@ del ordenador, donde residen programas y datos, sobre la que se pueden efectuar 
 **Descripción**
 
 El pluguin **mem** recopila las métricas de la memoria del sistema.
-Que utiliza un packete **mem** que es similar al comando  **FREE** de linux.
+Que utiliza un paquete **mem** que es similar al comando  **FREE** de linux.
 
 Ejemplo:
 
@@ -160,10 +158,9 @@ es el dispositivo de almacenamiento de datos que emplea un sistema de grabación
 **Descripción**
 
 El pluguin **Disk** recopila basicamente métricas sobre el uso del disco de nuestra
-maquina.
-
-El pluguin **Disk** es como el comando **df** de linux, pero esta busca esta 
-información en el directorio **/proc** ,mas especificamente **/proc/self/mounts** i **/proc/diskstats** para ver que dispositivos de 
+maquina. 
+Es como el comando **df** de linux, pero esta busca esta información en el directorio **/proc**,
+mas especificamente **/proc/self/mounts** i **/proc/diskstats** para ver que dispositivos de 
 almacenamiento estan conectados en ese momento en el ordenador y ver las propiedades e información necesaria de cada disco. 
 
 ejemplo:
@@ -256,7 +253,7 @@ Son los que escriben y/o envian las métricas en algun lugar en mi caso a Influx
 Ejemplo:
 ```
 [[outputs.influxdb]]
-  urls = [ "http://0.0.0.0:8086" ]
+  urls = [ "http://influxdb:8086" ]
   database = "telegraf"
 ```
 

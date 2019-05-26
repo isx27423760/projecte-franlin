@@ -21,7 +21,7 @@ y pública, utilizando siempre código abierto y/o software libre.
 
 ## Instalacion de grafana en Fedora
 
-En este [HowToInstallGrafana](https://github.com/isx27423760/projecte-franlin/blob/master/Documentation/HowToInstallGrafana.md) exlpico como instalar grafana en Fedora 27.
+En este [HowToInstallGrafana](https://github.com/isx27423760/projecte-franlin/blob/master/Documentation/HowToInstallGrafana.md) explico como instalar grafana en Fedora 27.
 
 ### Archivos Importantes
 
@@ -53,7 +53,7 @@ Con el podremos visualizar las métricas de nuestra fuente de datos.
 ![panel](img/panel.png)
 
 Despues aparecera en su titulo "Panel Title" , podremos acceder a la opción de editar,
-que es donde grafana muestra su verdadera potencia.En el hacemos una consulta de la cpu por ejemplo.
+que es donde grafana muestra su verdadera potencia. En el hacemos una consulta de la cpu por ejemplo.
 Los campos nos daran la posibilidad de hacer distantas consultas con tan solo pulsar sobre ellos.
 
 ![consul](img/consulta-grafana.png)
