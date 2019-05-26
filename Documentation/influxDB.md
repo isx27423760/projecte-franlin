@@ -51,6 +51,8 @@ field set, timestamp, se sobreesciben los valores en field set con los datos del
 
 ### Ejemplo de ordenes basicas de ejecucion en InfluxDB
 
+Antes instalamos el servidor InfluxDB , ver este [HowToInstallInfluxDB](https://github.com/isx27423760/projecte-franlin/blob/master/Documentation/HowToInstallInfluxDB.md).
+ 
 Primero ponemos en marcha el servidor con el siguiente comando:
 ```
 # /usr/bin/influxd -pidfile /var/run/influxdb/influxd.pid -config /etc/influxdb/influxdb.conf

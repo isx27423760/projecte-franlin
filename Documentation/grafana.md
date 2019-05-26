@@ -21,7 +21,7 @@ y pública, utilizando siempre código abierto y/o software libre.
 
 ## Instalacion de grafana en Fedora
 
-En este HowTo exlpico como instalar grafana en Fedora 27.
+En este [HowToInstallGrafana](https://github.com/isx27423760/projecte-franlin/blob/master/Documentation/HowToInstallGrafana.md) exlpico como instalar grafana en Fedora 27.
 
 ### Archivos Importantes
 
@@ -30,6 +30,7 @@ En este HowTo exlpico como instalar grafana en Fedora 27.
 - Fichero por defecto en **/etc/sysconfig/grafana-server**
 - Fichero de configuración está en **/etc/grafana/grafana.ini**
 - El fichero de logs/registros está en /var/log/grafana.log
+- La base de datos en grafana esta en **/var/lib/grafana/grafana.db.**
 
 ### Introducción a  Grafana
 
@@ -39,17 +40,25 @@ interficie web. Utilizare las credenciales de nombre de usuario: admin y contras
 
 ![grafana](img/login-grafana.png)
 
-
 Llegados a este punto, tendremos que agregar una base de datos o una fuente de datos. 
 Haremos clic en ‘Add data source‘.
 Por ejemplo, agregaremos una base de datos InfluxDB. Especificaremos el nombre de la fuente de datos, 
 el tipo y los parámetros de conexión. Después haremos clic en Save and Test.
 
-![influx](img/add_Influx.jpg)
-
+![influx](img/influxdb.png)
 
 Desde el panel de Inicio, haremos clic en New Panel para agregar uno nuevo. 
 Con el podremos visualizar las métricas de nuestra fuente de datos.
 
 ![panel](img/panel.png)
 
+Despues aparecera en su titulo "Panel Title" , podremos acceder a la opción de editar,
+que es donde grafana muestra su verdadera potencia.En el hacemos una consulta de la cpu por ejemplo.
+Los campos nos daran la posibilidad de hacer distantas consultas con tan solo pulsar sobre ellos.
+
+![consul](img/consulta-grafana.png)
+
+Y podemos hacer infinidad de consultas y para diferentes medidas que tenga disponible nuestra
+base de datos InfluxDB y posteriormente grafana nos lo mostraria de la siguiente manera.
+
+![grafaica](img/grafica.jpg)
