@@ -10,7 +10,7 @@
 
 * Colección y visualización de métricas con Telegraf, InfluxDB y Grafana.
 
-* Mostrar la sintaxis de las tecnologias utilizadas.
+* Mostrar la sintaxis de las tecnologías utilizadas.
 
 * Ejemplo de uso con servidores LDAP y HTTP.
 
@@ -26,23 +26,23 @@
 
 * InfluxDB
 
-	influxdb es un servidor de base de datos de series de tiempo (timeseries), ideal para logs o datos para gráficas que se generen en vivo
+	Influxdb es un servidor de base de datos de series de tiempo (timeseries), ideal para logs o datos para gráficas que se generen en vivo.
 
 * Telegraf
 
-	Telegraf es un agente ligero de recolección de datos, escrito en Go, cuyo principal propósito es enviar telemetría o métricas del sistema o de la aplicación a InfluxDB
+	Telegraf es un agente ligero de recolección de datos, escrito en Go, cuyo principal propósito es enviar telemetría o métricas del sistema o de la aplicación a InfluxDB.
 
 ---
 
 ## Métricas
 
 De acuerdo con la definición técnica es sistema o estándar de medidas.
-Pero prefiero definirlo como basicamente como una propiedad que medimos.
-no es un como un snapshot como tal pero es algo que recogemos y los subimos a una colección. 
+Pero prefiero definirlo como básicamente como una propiedad que medimos.
+No es un como un snapshot como tal pero es algo que recogemos y los subimos a una colección. 
 
 ---
 
-## Anatomia de una Métrica
+## Anatomía de una Métrica
 
 ![metrica](metrica.jpg)
 
@@ -56,7 +56,7 @@ Antes:
 collectd.dfs.df.srv-node-dfs10.df-complex.used
 ```
 
-Despues de Telgraf:
+Después de Telgraf:
 
 ```
 {
@@ -77,7 +77,7 @@ Despues de Telgraf:
 * Recogida de los datos, de diferentes fuentes.
 * Procesado de los datos, para transformar y formatear los mismos.
 * Estadística de los datos como media, mínimo, máximo, etc.
-* Salida de los datos, para redistribuir los mismos a distintas aplicaciones
+* Salida de los datos, para redistribuir los mismos a distintas aplicaciones.
 
 
 ---
@@ -85,15 +85,15 @@ Despues de Telgraf:
 ## Donde almacenar estas métricas?
 
   - Menos esquemas 
-  - Facil de montar y mantener
-  - Alto rendimineto
-  - gestión de retención de datos
+  - Fácil de montar y mantener
+  - Alto rendimiento
+  - Gestión de retención de datos
 
 ---
 
 ## InfluxDB
 
-Distribucion open source, es una base de datos de serie de tiempo.
+Distribución open source, es una base de datos de serie de tiempo.
 
 Una base de datos de series de tiempo (TSDB) es un sistema de software que está 
 optimizado para el manejo de datos de series de tiempo, matrices de números 
@@ -108,38 +108,38 @@ Puertos:
 
 ## Características
 
-	- HTTP API.
-	- SQL-like query language.
-	- Buena seleccion de la libreria de clientes y plugins.
-	- Data retention policy
+- HTTP API.
+- SQL-like query language.
+- Buena selección de la librería de clientes y plugins.
+- Data retention policy
 
 
 ---
 
 ## Por que la elección de InfluxDB?
 
-* Flexibilidad en el nombre de las metricas (no tines que estar poniendo tu los tags i todo eso)
-* No limitacion en las columnas.
-* Facil de manejar, una buena documentacion.
-* Presicion  de tiempo en milisegundos.
+* Flexibilidad en el nombre de las métricas.
+* Sin limitación en las columnas.
+* Fácil de manejar, una buena documentación.
+* Presición  de tiempo en milisegundos.
 
 ---
 
 ## SQL-like Query Language
 
-Sintaxis general :
+Sintaxis general:
 
 - List Series 
 - Select ... From ...Where ... Group by ....LIMIT
 - Delete From ... Where....
 
-Ademas dispone de funciones:
+Además dispone de funciones:
 
 * COUNT(), DISTINCT(), MEDIAN(), MAX(), MIN(), SUM(),etc.
 
 ---
 
-## Authenticación
+## Autenticación
 
 - TLS 
 	```
@@ -170,15 +170,15 @@ Ademas dispone de funciones:
 ## Grafana
 
 Características principales:
-- Open Source
-- Web based
-- Soporta Windows
-- Muchos origenes de datos.
-- Gráficos elegantes
+- Open Source.
+- Web based.
+- Soporta Windows.
+- Muchos orígenes de datos.
+- Gráficos elegantes.
 - Paneles dinámicos, reutilizables y altamente extensible.
 - Autenticación a través de LDAP, Google Auth, Grafana.com, Github y Gitlab.
 - Comparte de datos y cuadros de mando entre diferentes hosts.
-- TLS
+- TLS.
 
 ---
 
@@ -210,7 +210,7 @@ access to *
 
 ```
 [root@localhost]$ ldapsearch -x -LLL -D  'cn=Manager,dc=grafana,dc=org' \
-							-w secret  -b 'cn=Monitor' -s base '(objectClass=*)' '*' '+'
+	-w secret  -b 'cn=Monitor' -s base '(objectClass=*)' '*' '+'
 
 dn: cn=Monitor
 objectClass: monitorServer
@@ -277,12 +277,12 @@ componentes de una monitorización
 * Dato(medida)
 * Recolector
 * Almacenamiento
-* Herraminetas de Visualización
+* Herramientas de Visualización
 
 Un monitorización es la herramienta y proceso que mide y administra nuestros sistemas.
 
 * disponibilidad (si esta up or down)
-* Deteccion  de fallos. (si el servidor esta funcionando correctamente)
+* Detección  de fallos. (si el servidor está funcionando correctamente)
 * planificación de capacidades(ver si money)
 * Alertas(avisar cualquier imprevisto)
 
