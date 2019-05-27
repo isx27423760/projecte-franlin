@@ -190,3 +190,13 @@ pros:
 	* Control de Acceso amplio
 
 
+
+
+
+telegraf
+
+* Recogida de los datos, de diferentes fuentes.
+* Procesado de los datos, para transformar y formatear los mismos.
+* Estadística de los datos como media, mínimo, máximo, cuantiles, etc.
+* Salida de los datos, para redistribuir los mismos a distintas aplicaciones
+

@@ -1,7 +1,7 @@
 # HTTP
 ## @ edt ASIX M14 Curs 2018-2019
 
-Servidor http, para su posterior monitorea con Grafana.
+Servidor http, para su posterior monitoreo con Grafana.
 Telegraf  recopila información de rendimiento del servidor mediante el módulo 
 [mod_status](https://httpd.apache.org/docs/2.4/mod/mod_status.html) del servidor HTTP de Apache.
 
@@ -31,7 +31,7 @@ ExtendedStatus On
 </Location>
 ```
 
-**ExtendedStatus On** : Es para que muestra información adicional de nuestro servidor httpd.
+**ExtendedStatus On** : Es para que muestre información adicional de nuestro servidor httpd.
 
 **Allow from all** :  Permisos para que desde fuera del servidor podamos consultar el estado de nuestro web.
 
