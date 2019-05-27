@@ -45,7 +45,7 @@ La [planicación](https://github.com/isx27423760/projecte-franlin/blob/master/Do
 
 ## Póster y Video
 
-- [Póster](https://github.com/isx27423760/projecte-franlin/blob/master/videPoster/campalans.pdf)
+- [Póster](https://github.com/isx27423760/projecte-franlin/blob/master/videoPoster/campalans.pdf)
 
-- [Video del proyecto](https://github.com/isx27423760/projecte-franlin/blob/master/videPoster/proyecto.mp4)
+- [Video del proyecto](https://github.com/isx27423760/projecte-franlin/blob/master/videoPoster/proyecto.mp4)
  
