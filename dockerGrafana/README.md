@@ -1,8 +1,8 @@
 # Grafana Server 
 ## Proyecto 2018/2019 Franlin colque
 
-**dockerGrafana** : Servidor grafana que pemite
-  la conección y la configuración via http (web). El servidor sera llamado **grafana.server**
+**dockerGrafana** : Servidor grafana que permite
+  la conexión y la configuración vía http (web). El servidor será llamado **grafana.server**
 
 Construimos la imagen de grafana 
 

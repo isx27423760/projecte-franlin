@@ -7,15 +7,15 @@ monitorizarlo con grafana.
 
 ### Monitoring
 
-Existem dos formas de configuracion para habilitar el monitoreo del
+Existen dos formas de configuración para habilitar el monitoreo del
 servidor LDAP.
 
 1. **Via cn=config**
 2. **Via slapd.conf**
 
-Utilizare la segunda opción ya que hay mas documentacion en el manual de [openldap](https://www.openldap.org/doc/admin24/monitoringslapd.html).
+Utilizare la segunda opción ya que hay más documentación en el manual de [openldap](https://www.openldap.org/doc/admin24/monitoringslapd.html).
 
-**Configuracion de monitorep via slapd.conf**
+**Configuración de monitoreo vía slapd.conf**
 
 - Primero tenemos que estar seguros de que la configuración del esquema  **core.schema**
 este incluido en el fichero **slapd.conf**, ya que el backend monitor lo requiere.
@@ -35,7 +35,7 @@ include		/etc/openldap/schema/duaconf.schema
 
 ```
 
-- Despues creamos una instancia del backend **monitor** de base de datos 
+- Después creamos una instancia del backend **monitor** de base de datos 
 debajo de la base de datos principal.
 
 ```	
@@ -66,7 +66,7 @@ Ejecutamos la imagen docker con el puerto 389 ya mapeado
 ```
 # docker run --rm -p 389:389 --name ldap.server -h ldap.server -d ldap:19server
 ```
-#### Comprovacíón 
+#### Comprobacíón 
 
 Ejecutamos la siguiente orden para ver que funciona:
 

@@ -2,9 +2,9 @@
 
 ## 1a semana
 
-- Estructuración i planificación del proyecto Grafana.
+- Estructuración y planificación del proyecto Grafana.
 
-- Construcción de la BBDD en influxDB i recopilación de la información en telegraf. 
+- Construcción de la BBDD en influxDB y recopilación de la información en telegraf. 
 
 ## 2a semana
 

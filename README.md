@@ -41,7 +41,11 @@ La [planicación](https://github.com/isx27423760/projecte-franlin/blob/master/Do
 
 ## Calendario del proyecto
 
-[Diatario](https://github.com/isx27423760/projecte-franlin/blob/master/Documentation/dietari.md) del projecto con las fechas dias y horas empleados en este proyecto.
+[Diatario](https://github.com/isx27423760/projecte-franlin/blob/master/Documentation/dietario.md) del proyecto con las fechas días y horas empleados en este proyecto.
 
+## Póster y Video
 
+- [Póster](https://github.com/isx27423760/projecte-franlin/blob/master/videPoster/campalans.pdf)
+
+- [Video del proyecto](https://github.com/isx27423760/projecte-franlin/blob/master/videPoster/proyecto.mp4)
  

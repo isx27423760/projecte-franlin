@@ -20,7 +20,7 @@ Algunos de los detalles que nos proporciona son :
 
 #### Configuración del fichero httpd.conf
 
-Descomentamos las lineas siguientes del servidor.
+Descomentamos las líneas siguientes del servidor.
 
 ```
 ExtendedStatus On
@@ -36,7 +36,7 @@ ExtendedStatus On
 **Allow from all** :  Permisos para que desde fuera del servidor podamos consultar el estado de nuestro web.
 
 
-Creamos una web virtual , para hacer las consultas a esta pagina.
+Creamos una web virtual, para hacer las consultas a esta página.
 
 ```
 <VirtualHost www.virtual.com:80>
@@ -60,7 +60,7 @@ Ejecutamos la imagen docker con el puerto 389 ya mapeado
 ```
 # docker run --rm -p 80:80 --name www.myserver.org -h www.myserver.org -d http:19server
 ```
-#### Comprovacíón 
+#### Comprobacíón 
 
 Ejecutamos la siguiente orden para ver que funciona:
 

@@ -11,5 +11,5 @@
 * [Grafana](https://github.com/isx27423760/projecte-franlin/blob/master/Documentation/grafana.md) 
 * [InfluxDB](https://github.com/isx27423760/projecte-franlin/blob/master/Documentation/influxDB.md)
 * [Telegraf](https://github.com/isx27423760/projecte-franlin/blob/master/Documentation/telegraf.md)
-* [diatario](https://github.com/isx27423760/projecte-franlin/blob/master/Documentation/dietari.md)
+* [diatario](https://github.com/isx27423760/projecte-franlin/blob/master/Documentation/dietario.md)
 * [Planing del proyecto](https://github.com/isx27423760/projecte-franlin/blob/master/Documentation/planificacio.md)

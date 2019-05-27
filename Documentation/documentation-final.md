@@ -4,7 +4,7 @@ El proyecto consiste en general en la monitorización de la infraestructura
 como por ejemplo de una empresa o entidad y lo empleare con Grafana.
 
 En esta caso voy a explicar como montar dicha estructura con la ayuda
-de **Influxdb** y **Telegraf** que forman un duo perfecto para el tratamiento de los
+de **Influxdb** y **Telegraf** que forman un dúo perfecto para el tratamiento de los
 datos para su posterior visualización con Grafana
 
 ## Información general
@@ -14,19 +14,19 @@ datos para su posterior visualización con Grafana
             de todas las métricas recolectadas. 
 
 * [InfluxDB](https://github.com/isx27423760/projecte-franlin/blob/master/Documentation/influxDB.md): Es el lugar donde Telegraf envía toda esta información, ya que 
-			InfluxDB esta especialmente diseñado para almacenar de manera eficiente 
+			InfluxDB está especialmente diseñado para almacenar de manera eficiente 
 			una cantidad importante de información
 
 
 * [Grafana](https://github.com/isx27423760/projecte-franlin/blob/master/Documentation/grafana.md): Es el Dashboard que se encargara de mostrar toda la información que InfluxDB tiene 
-           almacenado en las Bases de Datos en forma de gráficas que se podran configurar 
+           almacenado en las Bases de Datos en forma de gráficas que se podrán configurar 
            facilmente.
 
 ## Instalación 
 
 ### Características del sistema
 
-La instalacón se efectuara en un Fedora 27, con las siguientes caracteristicas:
+La instalación se efectuara en un Fedora 27, con las siguientes características:
 
 ```
     RAM: 16 GB
@@ -42,7 +42,7 @@ La instalacón se efectuara en un Fedora 27, con las siguientes caracteristicas:
 - Telegraf: Versión 1.10.4
 - InfluxDB: Versión 1.7.6
 
-Para la instalación y puesta en marcha de los servicios ver estas documentaciónes:
+Para la instalación y puesta en marcha de los servicios ver estas documentaciones:
 
 1. How to install [Telegraf](https://github.com/isx27423760/projecte-franlin/blob/master/Documentation/HowToInstallTelegraf.md)
 2. How to install [InfluxDB](https://github.com/isx27423760/projecte-franlin/blob/master/Documentation/HowToInstallInfluxDB.md)
@@ -54,7 +54,7 @@ Para la instalación y puesta en marcha de los servicios ver estas documentació
 
 ### Puesta en marcha 
 
-Primero tenemos que crear un fichero docker-compose.yml en el que estara 
+Primero tenemos que crear un fichero docker-compose.yml en el que estará 
 los servicios necesarios para el funcionamiento.
 
 ```
@@ -136,7 +136,7 @@ networks:
   mynet:
 ```
 
-Despues ponemos en marcha los servidores en modo datach:
+Después ponemos en marcha los servidores en modo datach:
 
 ```
 [isx27423760@localhost projecte-franlin]$ docker-compose up -d
@@ -149,7 +149,7 @@ Creating ldap.server      ... done
 ```
 
 Una vez puesto en marcha los servidores comprobamos que los puertos de http(80),
-ldap(389),influxdb(8086 y 8088) y grafana(3000) estan mapeados localmente en nuestro ordenador.
+ldap(389), influxdb(8086 y 8088) y grafana(3000) están mapeados localmente en nuestro ordenador.
 
 ```
 [isx27423760@localhost projecte-franlin]$nmap localhost
@@ -166,7 +166,7 @@ PORT     STATE SERVICE
 ``` 
 #### Comprobación del funcionamiento de LDAP y HTTP
 
-* Para comprovar que el servidor LDAP esta fucionando , ejecutamos la siguiente orden:
+* Para comprobar que el servidor LDAP esta funcionando, ejecutamos la siguiente orden:
 	```
 	[isx27423760@localhost LDAPmonitoring]$ ldapsearch -x -h localhost -b 'cn=Monitor' -s base 1.1
 	# extended LDIF
@@ -187,7 +187,7 @@ PORT     STATE SERVICE
 	# numResponses: 2
 	# numEntries: 1
 	```
-*	Para comprovar el servidor HTTP esta funcionando , ejecutamos la siguinete orden:
+*	Para comprobar el servidor HTTP está funcionando, ejecutamos la siguiente orden:
 	```
 	[king@localhost LDAPmonitoring]$ telnet localhost 80
 	Trying ::1...
@@ -215,15 +215,15 @@ PORT     STATE SERVICE
 	Connection closed by foreign host.
 	```
 	
-	Tambien podem comprovar el estado del servidor HTTP en el navegador:
+	También podemos comprobar el estado del servidor HTTP en el navegador:
 	
 	![http](img/http-status.png)
 
-#### Comprovación de Telegraf
+#### Comprobación de Telegraf
 
 En la configuración de telegraf puse que las métricas que recolecte las guarde en 
-un fichero con la extención JSON y haci poder comprobar si realmente esta 
-recibiendo metricas del systema  y/o de los servidores:
+un fichero con la extensión JSON y a si poder comprobar si realmente está 
+recibiendo métricas del sistema  y/o de los servidores:
 
 ```
 $ cat /etc/telegraf/telegraf.conf
@@ -243,7 +243,7 @@ $ cat /etc/telegraf/telegraf.conf
   json_timestamp_units = "1s"
 ```
 
-vemos el fichero en texto plano entrando en el contenedor Docker de Telegraf:
+Vemos el fichero en texto plano entrando en el contenedor Docker de Telegraf:
 
 ```
 $ docker exec -it telegraf /bin/bash
@@ -277,7 +277,7 @@ udplite_noports":0,"udplite_outdatagrams":0,"udplite_rcvbuferrors":0,"udplite_sn
 ............MORE LINES...................................................
 ```
 
-#### Comprovación de InfluxDB
+#### Comprobación de InfluxDB
 
 Entramos en el contenedor docker del servidor InfluxDB:
 
@@ -296,7 +296,7 @@ Enter an InfluxQL query
 ```
 
 Entramos a la base de datos de Telegraf y vemos las 
-medidas que le esta pasando, y vemos que estan apache,openldap,cpu,ram,disk,etc:
+medidas que le está pasando, y vemos que están apache,openldap,cpu,ram,disk,etc:
 
 ```
 > show databases
@@ -328,23 +328,23 @@ swap
 system
 ```
 
-#### Comprovación de Grafana
+#### Comprobación de Grafana
 
 En el navegador nos conectamos a htttp://localhost:3000, por defecto es el 
-puerto 3000, pero podria ser otro estableciendolo en el fichero de configuración
+puerto 3000, pero podría ser otro estableciéndolo en el fichero de configuración
 de Grafana:
 
 ![grafana](img/loging.png)
 
-Una vez dentro, inciciamos sesión con las credenciales por defecte
+Una vez dentro, iniciamos sesión con las credenciales por defecto
 que nos facilita grafana user:admin y password:admin y hacemos los siguientes pasos,
-posteriormente nos pide que establescamos una nueva contraseña:
+posteriormente nos pide que establezcamos una nueva contraseña:
 
 - Implementamos nuestra base de datos InfluxDB en Grafana:
 
 	![grafana](img/influx.png)
 
-- Despues de agregar nuestra base de datos podemos crear los dashboards o paneles 
+- Después de agregar nuestra base de datos podemos crear los dashboards o paneles 
 que queramos
 
 	![import](img/dashboard.png)
