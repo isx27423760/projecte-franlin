@@ -1,18 +1,18 @@
 # InfluxDB
 
 Influxdb es un servidor de base de datos de series de tiempo (timeseries), 
-ideal para logs o datos para gráficas que se generen en vivo, ademas tiene un rendimiento
+ideal para logs o datos para gráficas que se generen en vivo, además tiene un rendimiento
 importante ante la entrada de grandes datos.
 
 Utiliza el puerto **8086** que es el puerto predeterminado que ejecuta el servicio HTTP InfluxDB
 y el puerto **8088** que es el predeterminado que ejecuta el servicio RPC para copia de seguridad y restauración 
 (esta utilidad del puerto es para una versión enterprise de pago del servicio InfluxDB).
 
-Programado en go permite la interacción via API HTTP(S) (JSON) e interficie web y los datos de gestionan con un lenguaje similar a SQL.
+Programado en go permite la interacción vía API HTTP(S) (JSON) e interficie web y los datos de gestión con un lenguaje similar a SQL.
 
-**Conceptos basicos de InfluxDB**
+**Conceptos básicos de InfluxDB**
 
-* **Database:** es el contenedor lógico que contiene series temporales, usuarios, políticas de retención ,etc.
+* **Database:** es el contenedor lógico que contiene series temporales, usuarios, políticas de retención,etc.
 
 * **Measurement:** es la estructura en la que se almacenan los datos. En el ejemplo anterior sería la tabla «host_performance»
 
@@ -29,13 +29,13 @@ Son campos indexados y almacenados como strings. Son opcionales en la infraestru
 
 * **Point:** es el conjunto de valores de fields y tags asociados a un timestamp. Podríamos asociarlo a un registro de la tabla. (Similar a las filas de SQL) 
 
-## Caracteristicas de influxDB
+## Características de influxDB
 
-Algunas de las características que definen InfluxDB son las siguientes:
+Algunas de las características que definen InfluxDB son los siguientes:
 
 -  Se asume que si se envía el mismo dato varias veces, es el mismo dato por lo que se aplica la 
 política de resolución de conflictos (de forma resumida, si son exactamente los mismos datos de tags set, 
-field set, timestamp, se sobreesciben los valores en field set con los datos del último Point) por lo que en ciertos casos, se pueden perder datos.
+field set, timestamp, se sobresciben los valores en field set con los datos del último Point) por lo que en ciertos casos, se pueden perder datos.
 
 - El borrado de datos es una situación extraña. Normalmente se borran datos antiguos. Se limita la funcionalidad de borrado para incrementar las de escritura y lectura
 
@@ -43,15 +43,15 @@ field set, timestamp, se sobreesciben los valores en field set con los datos del
 
 - La mayoría de los datos tienen timestamps recientes y se guardan en orden ascendente para mejorar el rendimiento.
 
-- La base de datos puede gestionar un gran volumen de lecturas y escrituras, priorizandolas sobre la vista de los datos.
+- La base de datos puede gestionar un gran volumen de lecturas y escrituras, priorizando las sobre la vista de los datos.
 
 - No está soportado el uso de joins entre tablas.
 
-- Los puertos InfluxDB en el interfaz web de cliente (8083) y el del API de la propia base de datos (8086).
+- Los puertos InfluxDB en la interfaz web de cliente (8083) y el del API de la propia base de datos (8086).
 
-### Ejemplo de ordenes basicas de ejecucion en InfluxDB
+### Ejemplo de ordenes básicas de ejecución en InfluxDB
 
-Antes instalamos el servidor InfluxDB , ver este [HowToInstallInfluxDB](https://github.com/isx27423760/projecte-franlin/blob/master/Documentation/HowToInstallInfluxDB.md).
+Antes instalamos el servidor InfluxDB, ver este [HowToInstallInfluxDB](https://github.com/isx27423760/projecte-franlin/blob/master/Documentation/HowToInstallInfluxDB.md).
  
 Primero ponemos en marcha el servidor con el siguiente comando:
 ```
@@ -70,7 +70,7 @@ Primero ponemos en marcha el servidor con el siguiente comando:
 
 .............more lines ....................................................
 ```
-Luego entramos dentro del sell del servidor para realizar modificaciones,consultas,etc.
+Luego entramos dentro del sell del servidor para realizar modificaciones, consultas,etc.
 
 ```
 [root@56f4bbfcf5ce /]# influx
@@ -104,7 +104,7 @@ Enter an InfluxQL query
 	> USE test
 	Using database test
 	```
-- Inertamos datos de prueba 
+- Insertamos datos de prueba 
 
 	```
 	INSERT cpu,host=serverA value=0.64
@@ -129,7 +129,7 @@ Enter an InfluxQL query
         5. show field keys       show field key information
 ```
 
-## Diferencias entre InfluxDB i una base de datos SQL
+## Diferencias entre InfluxDB y una base de datos SQL
 
 InfluxDB está hecho para trabajar con datos de series de tiempo. 
 Las bases de datos SQL pueden manejar series de tiempo, pero no se crearon 
@@ -155,7 +155,7 @@ En Cuanto a la estructura :
 +---------+---------+---------------------+--------------+  #  2015-04-16T12:00:03Z     15
 
 ```
-En resúmen:
+En resumen:
 
 - Una medida(measurenmets) en InfluxDB es similar a una tabla de SQL
 - Los tags(etiquetas) InfluxDB (park_id y planet) son como columnas indexadas en una base de datos SQL.
@@ -216,7 +216,7 @@ $ curl -i -XPOST 'http://localhost:8086/write?db=mydbs' --data-binary @cpu.txt
 ```
 
 Otra forma de crear e insertar medidas a una base de datos en influxdb 
-mediante un fichero es la siguiente:
+mediante un fichero es el siguiente:
 
 ```
 $cat piratas.txt
@@ -235,12 +235,12 @@ treasures,captain_id=tetra value=47 1439856000
 treasures,captain_id=crunch value=109 1439858880
 ```
 
-Escribir a la base de datos con una presición de segundos:
+Escribir a la base de datos con una precisión de segundos:
 ```
 #influx -import -path=pirates.txt -precision=s
 ```
 
-### Politica de retención de datos en influxdb
+### Política de retención de datos en influxdb
 
 Es la parte de la estructura de datos de InfluxDB que describe por cuánto 
 tiempo mantiene InfluxDB los datos (duración), cuántas copias de estos 

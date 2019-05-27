@@ -1,7 +1,7 @@
 # Instalación de InfluxDB
 
 Como root tenemos que ejecutar las siguientes ordenes para instalar InfluxDB
-en nuestro systema fedora27:
+en nuestro sistema fedora27:
 
 * Instalar paquete de  InfluxDB .
 
@@ -15,11 +15,11 @@ enabled = 1
 gpgcheck = 1
 gpgkey = https://repos.influxdata.com/influxdb.key
 ```
-	Despues instalamos el paquete:
+* Después instalamos el paquete:
 	```
 	#dnf -y install influxdb
 	```
-* Despues Arrancamos el servicio InfluxDB:
+* Después Arrancamos el servicio InfluxDB:
 	```
 	#systemctl start influxdb
 	```

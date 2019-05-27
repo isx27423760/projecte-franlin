@@ -12,14 +12,14 @@ valores, medidos en determinados momentos y ordenados cronológicamente.
 En resumen, es apenas una vía o manera de representar datos estadísticos de una manera rápida 
 y pública, utilizando siempre código abierto y/o software libre.
 
-## Caracteristicas de Grafana
+## Características de Grafana
 
 * Dispone de paneles dinámicos y reutilizables.
-* Permite la autenticacíon via LDAP, Google Auth, Grafana.com y Github. 
+* Permite la autenticación vía LDAP, Google Auth, Grafana.com y Github. 
 * Gráficos elegantes para la visualización de datos.
-* Interfaz rapido y flexible con numerosas opciónes.
+* Interfaz rápido y flexible con numerosas opciones.
 
-## Instalacion de grafana en Fedora
+## Instalación de grafana en Fedora
 
 En este [HowToInstallGrafana](https://github.com/isx27423760/projecte-franlin/blob/master/Documentation/HowToInstallGrafana.md) explico como instalar grafana en Fedora 27.
 
@@ -30,7 +30,7 @@ En este [HowToInstallGrafana](https://github.com/isx27423760/projecte-franlin/bl
 - Fichero por defecto en **/etc/sysconfig/grafana-server**
 - Fichero de configuración está en **/etc/grafana/grafana.ini**
 - El fichero de logs/registros está en /var/log/grafana.log
-- La base de datos en grafana esta en **/var/lib/grafana/grafana.db.**
+- La base de datos en grafana está en **/var/lib/grafana/grafana.db.**
 
 ### Introducción a  Grafana
 
@@ -52,13 +52,13 @@ Con el podremos visualizar las métricas de nuestra fuente de datos.
 
 ![panel](img/panel.png)
 
-Despues aparecera en su titulo "Panel Title" , podremos acceder a la opción de editar,
-que es donde grafana muestra su verdadera potencia. En el hacemos una consulta de la cpu por ejemplo.
-Los campos nos daran la posibilidad de hacer distantas consultas con tan solo pulsar sobre ellos.
+Después aparecerá en su titulo "Panel Title", podremos acceder a la opción de editar,
+que es donde grafana muestra su verdadera potencia. Hacemos una consulta de la cpu por ejemplo.
+Los campos nos darán la posibilidad de hacer distintas consultas con tan solo pulsar sobre ellos.
 
 ![consul](img/consulta-grafana.png)
 
 Y podemos hacer infinidad de consultas y para diferentes medidas que tenga disponible nuestra
-base de datos InfluxDB y posteriormente grafana nos lo mostraria de la siguiente manera.
+base de datos InfluxDB y posteriormente grafana nos lo mostraría de la siguiente manera.
 
 ![grafaica](img/grafica.jpg)

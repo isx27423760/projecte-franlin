@@ -5,19 +5,19 @@
 - grupo: hisx2.
 - EDT ASIX M14 - Barcelona.
 
-## Proposito del proyecto
+## Propósito del proyecto
 
 Grafana es una herramienta de código abierto para el análisis y visualización de métricas. 
 Se utiliza frecuentemente para visualizar de una forma elegante series de datos en el análisis de infraestructuras y aplicaciones.
-Se utiliza mucho en la monitorización de infraestructuras de las grandes empresas y es por eso que mi proposito es llegar a conocer 
+Se utiliza mucho en la monitorización de infraestructuras de las grandes empresas y es por eso que mi propósito es llegar a conocer 
 el funcionamiento y/o utilización de las diferentes herramientas que pueda necesitar.
 
-Estudiar el funcionamiento de grafana i presentar ejemplos de utilización. Integración con Docker. Monitorizar servicios o recursos como por ejemplo:
+Estudiar el funcionamiento de grafana y presentar ejemplos de utilización. Integración con Docker. Monitorizar servicios o recursos como por ejemplo:
 
 * Recursos : cpu,ram,disk
 * Servicios: http , ldap
 
-## Estrutura del proyecto
+## Estructura del proyecto
 
 - Investigación de los servicios necesarios para el buen funcionamiento para Grafana.
 
@@ -29,7 +29,7 @@ Estudiar el funcionamiento de grafana i presentar ejemplos de utilización. Inte
 
 - Construir servidor HTTP para su posterior monitoreo.
 
-- Implementación en docker de los servicios mencionados: Grafana, InfluxDB , Telegraf y los servidores a monitorizar.
+- Implementación en docker de los servicios mencionados: Grafana, InfluxDB, Telegraf y los servidores a monitorizar.
 
 ## Documentación 
 

@@ -7,8 +7,8 @@ lista de plugins de entrada, como apache, consul, couchDB, Docker, Elasticsearch
 Fluentd, HAproxy, http POST, entre otros. Su salida la envía por lo general a una base 
 de datos InfluxDB, y es esta capacidad la que mostraremos en este proyecto.
 
-Por lo tanto,**Telegraf** es un agente ligero de recolección de datos, que esta escrito en go,
-su principal objectivo es la de enviar telemetria del sistema o de un server 
+Por lo tanto,**Telegraf** es un agente ligero de recolección de datos, que está escrito en go,
+su principal objetivo es la de enviar telemetria del sistema o de un server 
 a **InfluxDB** o a otro sitio, influxDB no tiene por que estar en el mismo host que telegraf
 pueden estar en distintos hosts.
 
@@ -17,15 +17,15 @@ pueden estar en distintos hosts.
 * Escrito en Go. Se compila en un único binario sin dependencias externas.
 * Consumo mínimo de memoria.
 * Sistema de plugin que permite una fácil inserción de nuevos inputs y outputs.
-* Gran número de plugins para la mayoría de los servicios mas populares y APIs.
+* Gran número de plugins para la mayoría de los servicios más populares y APIs.
 
 ### Formatos de Output Data 
 
 Además de los formatos de datos específicos de salida,Telegraf admite un conjunto 
 de formatos de datos estándar que se pueden seleccionar al configurar muchos complementos de salida.
 
-* InfluXDB (que es la que utilizare para enviar directamente las metricas en tiempo real)
-* JSON que (que genera un fichero en formato json con los datos de las metricas recogidas del determinado servicio)
+* InfluXDB (que es la que utilizare para enviar directamente las métricas en tiempo real)
+* JSON que (que genera un fichero en formato json con los datos de las métricas recogidas del determinado servicio)
 
 y tambien hay formatos como **Graphite,SplunkMetric,Carbon2,Wavefront**.
 
@@ -157,11 +157,11 @@ es el dispositivo de almacenamiento de datos que emplea un sistema de grabación
 
 **Descripción**
 
-El pluguin **Disk** recopila basicamente métricas sobre el uso del disco de nuestra
+El pluguin **Disk** recopila básicamente métricas sobre el uso del disco de nuestra
 maquina. 
 Es como el comando **df** de linux, pero esta busca esta información en el directorio **/proc**,
-mas especificamente **/proc/self/mounts** i **/proc/diskstats** para ver que dispositivos de 
-almacenamiento estan conectados en ese momento en el ordenador y ver las propiedades e información necesaria de cada disco. 
+más específicamente **/proc/self/mounts** i **/proc/diskstats** para ver que dispositivos de 
+almacenamiento están conectados en ese momento en el ordenador y ver las propiedades e información necesaria de cada disco. 
 
 ejemplo:
 
@@ -195,7 +195,7 @@ Y con el siguiente comando ponemos en marcha el servicio con la configuración q
 telegraf --config telegraf.conf	
 ```
 
-### Cofiguración 
+### Configuración 
 
 En la mayoría de los sistemas, la ubicación del archivo se encuentran en :
 **/etc/telegraf/telegraf.conf**
@@ -203,9 +203,9 @@ En la mayoría de los sistemas, la ubicación del archivo se encuentran en :
 #### Elementos importantes  del fichero de configuración
 
 - **Agent**: La tabla de agentes configura Telegraf y los valores predeterminados utilizados en todos los complementos, en esta parta 
-			 puedes configurar un intervalo de tiempo de recoleción de los datos,tambien los logs, el limite de buffer de las metricas,etc.
+			 puedes configurar un intervalo de tiempo de recolección de los datos, tambien los logs, el limite de buffer de las métricas, etc.
 
-- **Plugins**: los plugins en Telegraf estan separados en cuatro partes **Inputs,Outputs,Processors y Aggregators.**
+- **Plugins**: los plugins en Telegraf están separados en cuatro partes **Inputs, Outputs, Processors y Aggregators.**
 			  Solamente aplicare los inputs y outputs plugins. 
 
 #### Inputs Plugins
@@ -214,10 +214,10 @@ Los complementos de entrada son los que reúnen y crean métricas
 
 Y tiene estas caracteristica:
 
-- Interval (la frecuencia con que reune métricas)
-- name_override (Sobreescribe el nombre por defecto de la medida)
+- Interval (la frecuencia con que reúne métricas)
+- name_override (Sobrescribe el nombre por defecto de la medida)
 
-y otras como name_prefix,name_suffix y tags.
+Y otras como name_prefix, name_suffix y tags.
 
 Ejemplo de un Input plugin:
 
@@ -248,7 +248,7 @@ Ejemplo de un Input plugin:
 
 #### Outputs Plugins
 
-Son los que escriben y/o envian las métricas en algun lugar en mi caso a Influxdb.
+Son los que escriben y/o envían las métricas en algún lugar en mi caso a Influxdb.
 
 Ejemplo:
 ```

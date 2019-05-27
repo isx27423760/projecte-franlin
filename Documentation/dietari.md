@@ -24,4 +24,6 @@ Dia | Objetivos de tareas a realizar | comentarios | Horas realizadas
 21/05/2019 | Grafana  | Hacer que los datos de Grafana y InfluxDB sean perdurables  | 4 hores.
 22/05/2019 | Docker Compose  | Hacer que los datos de Grafana y InfluxDB sean perdurables  | 6 hores.
 23/05/2019 | Docker volume ips  | Hacer que los datos de Grafana y InfluxDB sean perdurables y sin necesidad de ip fijas  | 6 hores.
-24/05/2019 | scrip en bash  | generar un JSON para injectar a InfluxDB  | 4 hores.
+24/05/2019 | scrip en python  | generar un JSON para injectar a InfluxDB  | 4 hores.
+25/05/2019 | scrip en python  | generar un JSON para injectar a InfluxDB  | 6 hores.
+25/05/2019 | scrip en bash  | scrip para ejecutar con un crontab  | 2 hores.

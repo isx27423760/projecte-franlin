@@ -15,15 +15,15 @@ métricas del host desde un contenedor y enviarlas a InfluxDB que se encuentra e
 
 #### Configuración
 
-Necesitamos el fichero por defecto de Telegraf , para poder modificarlo a nuestras necesidades.
+Necesitamos el fichero por defecto de Telegraf, para poder modificarlo a nuestras necesidades.
 
-Genermos un fichero de configuración de Telegraf ,con el siguiente comando:
+Generamos un fichero de configuración de Telegraf, con el siguiente comando:
 
 ```
 # ./telegraf -sample-config -input-filter cpu:mem:disk:openldap -output-filter influxdb > telegraf.conf
 ```
 
-Abrimos el fichero y lo editamos para que Telegraf envie las metricas a InfluxDB
+Abrimos el fichero y lo editamos para que Telegraf envíe las métricas a InfluxDB
 
 ```
 # Configuration for sending metrics to InfluxDB
@@ -38,7 +38,7 @@ Abrimos el fichero y lo editamos para que Telegraf envie las metricas a InfluxDB
 ```
 
 Si queremos monitorizar un servidor ldap, y esta se encuentra en un docker tenemos que editar la siguiente 
-linea:
+línea:
 
 ```
 [[inputs.openldap]]

@@ -1,9 +1,9 @@
 # Instalación de Grafana
 
 Como root tenemos que ejecutar las siguientes ordenes para instalar grafana
-en nuestro systema fedora27:
+en nuestro sistema fedora27:
 
-* Instalar paquete de  grafana .
+* Instalar paquete de  grafana.
 
 	En primer lugar debemos agregar el repositorio de grafana a nuestra maquina como root.
 ```
@@ -18,11 +18,11 @@ gpgkey=https://packages.grafana.com/gpg.key
 sslverify=1
 sslcacert=/etc/pki/tls/certs/ca-bundle.crt
 ```
-	Despues instalamos el paquete:
+* Después instalamos el paquete:
 	```
 	#dnf -y install grafana
 	```
-* Despues Arrancamos el servicio grafana:
+* Después Arrancamos el servicio grafana:
 	```
 	#systemctl start grafana-server
 	```
