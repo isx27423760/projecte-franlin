@@ -106,7 +106,8 @@ Puertos:
 
 ---
 
-Soporta:
+## Características
+
 	- HTTP API.
 	- SQL-like query language.
 	- Buena seleccion de la libreria de clientes y plugins.
@@ -117,21 +118,20 @@ Soporta:
 
 ## Por que la elección de InfluxDB?
 
-	- Flexibilidad en el nombre de las metricas (no tines que estar poniendo tu los tags i todo eso)
-	- No limitacion en las columnas.
-	- Facil de manejar, una buena documentacion.
-	- Presicion  de tiempo en milisegundos.
+* Flexibilidad en el nombre de las metricas (no tines que estar poniendo tu los tags i todo eso)
+* No limitacion en las columnas.
+* Facil de manejar, una buena documentacion.
+* Presicion  de tiempo en milisegundos.
 
 ---
 
-
-SQL-like Query Language:
+## SQL-like Query Language
 
 Sintaxis general :
 
- - List Series 
- - Select ... From ...Where ... Group by ....LIMIT
- - Delete From ... Where....
+- List Series 
+- Select ... From ...Where ... Group by ....LIMIT
+- Delete From ... Where....
 
 Ademas dispone de funciones:
 
@@ -139,7 +139,7 @@ Ademas dispone de funciones:
 
 ---
 
-Authenticación
+## Authenticación
 
 - TLS 
 	```
@@ -185,31 +185,33 @@ Características principales:
 ## Recursos y servicios
 
 Recursos: 
-	- CPU
-	- RAM
-	- Disk
+- CPU
+- RAM
+- Disk
 Servicios:
-	- OpenLDAP
-	- HTTP
+- OpenLDAP
+- HTTP
 
 ---
 
 ## Servidor LDAP
 
 Configurar slapd.conf:
-	```
-	database monitor
-	access to *
-		by dn.exact="cn=Manager,dc=example,dc=com
-		by * none
-	```
+```
+database monitor
+access to *
+     by dn.exact="cn=Manager,dc=example,dc=com
+     by * none
+```
 
 ---
 
-Comprobación
+## Comprobación
 
+```
 [root@localhost]$ ldapsearch -x -LLL -D  'cn=Manager,dc=grafana,dc=org' \
 							-w secret  -b 'cn=Monitor' -s base '(objectClass=*)' '*' '+'
+
 dn: cn=Monitor
 objectClass: monitorServer
 structuralObjectClass: monitorServer
@@ -226,7 +228,7 @@ monitoredInfo: OpenLDAP: slapd 2.4.45 (Dec  6 2017 14:25:36)
 entryDN: cn=Monitor
 subschemaSubentry: cn=Subschema
 hasSubordinates: TRUE
-
+```
 ---
 
 ## Servidor HTTP
