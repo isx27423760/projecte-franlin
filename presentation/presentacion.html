@@ -43,7 +43,8 @@
 </section>
 <section id="métricas" class="slide level2">
 <h2>Métricas</h2>
-<p>De acuerdo con la definición técnica es sistema o estándar de medidas. Pero prefiero definirlo como básicamente como una propiedad que medimos. No es un como un snapshot como tal pero es algo que recogemos y los subimos a una colección.</p>
+<p>De acuerdo con la definición técnica es sistema o estándar de medidas. 
+Pero prefiero definirlo básicamente como una propiedad que medimos .</p>
 </section>
 <section id="anatomía-de-una-métrica" class="slide level2">
 <h2>Anatomía de una Métrica</h2>
@@ -62,11 +63,10 @@
     mountpoint: srv/node/dfs10
     unit: B
     type: used
-    metric_type: gauge
 }</code></pre>
 </section>
 <section id="telegraf" class="slide level2">
-<h2>telegraf</h2>
+<h2>Telegraf</h2>
 <ul>
 <li>Recogida de los datos, de diferentes fuentes.</li>
 <li>Procesado de los datos, para transformar y formatear los mismos.</li>
@@ -75,7 +75,7 @@
 </ul>
 </section>
 <section id="donde-almacenar-estas-métricas" class="slide level2">
-<h2>Donde almacenar estas métricas?</h2>
+<h2>¿Donde almacenar estas métricas?</h2>
 <ul>
 <li>Menos esquemas</li>
 <li>Fácil de montar y mantener</li>
@@ -85,7 +85,8 @@
 </section>
 <section id="influxdb" class="slide level2">
 <h2>InfluxDB</h2>
-<p>Una base de datos de series de tiempo (TSDB) es un sistema de software que está optimizado para el manejo de datos de series de tiempo, matrices de números indexados por tiempo (una fecha o un rango de fecha y hora).</p>
+<p>Una base de datos de series de tiempo (TSDB) es un sistema de software que está optimizado 
+para el manejo de datos de series de tiempo, matrices de números indexados por tiempo (una fecha o un rango de fecha y hora).</p>
 <p>Puertos:</p>
 <ul>
 <li>8086</li>
@@ -102,7 +103,7 @@
 </ul>
 </section>
 <section id="por-que-la-elección-de-influxdb" class="slide level2">
-<h2>Por que la elección de InfluxDB?</h2>
+<h2>Otras características</h2>
 <ul>
 <li>Flexibilidad en el nombre de las métricas.</li>
 <li>Sin limitación en las columnas.</li>
@@ -213,10 +214,6 @@ hasSubordinates: TRUE</code></pre>
         Order allow,deny
         Allow from all
     &lt;/Location&gt;</code></pre>
-<ul>
-<li><p><strong>ExtendedStatus On</strong>: Es para que muestre información adicional de nuestro servidor httpd.</p></li>
-<li><p><strong>Allow from all</strong>: Permisos para que desde fuera del servidor podamos consultar el estado de nuestro web.</p></li>
-</ul>
 </section>
 <section id="docker-compose" class="slide level2">
 <h2>Docker Compose</h2>
@@ -249,15 +246,14 @@ hasSubordinates: TRUE</code></pre>
 </ul>
 <p>Un monitorización es la herramienta y proceso que mide y administra nuestros sistemas.</p>
 <ul>
-<li>disponibilidad (si esta up o down).</li>
-<li>Detección de fallos (si el servidor está funcionando correctamente).</li>
-<li>planificación de capacidades (ahorro de dinero).</li>
-<li>Alertas (avisar de cualquier imprevisto).</li>
+<li>disponibilidad.</li>
+<li>Detección de fallos.</li>
+<li>Alertas.</li>
 </ul>
 </section>
 <section class="slide level2">
 
-<h3 id="gracias-por-vuestra-atención">Gracias por vuestra atención</h3>
+<h3 id="gracias-por-vuestra-atención">Gracias por vuestra atención.</h3>
 </section>
 <!-- {{{{ dzslides core
 #
