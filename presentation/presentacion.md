@@ -11,9 +11,9 @@
 
 * Colección y visualización de métricas con Telegraf, InfluxDB y Grafana.
 
-* Mostrar la sintaxis de las tecnologías utilizadas.
+* Mostrar el funcionamiento de las tecnologías utilizadas.
 
-* Ejemplo de uso con servidores LDAP y HTTP.
+* Ejemplo de uso con recursos y servicios.
 
 * Implementación en Dockers.
 
@@ -39,8 +39,8 @@
 
 
 De acuerdo con la definición técnica es sistema o estándar de medidas.
-Pero prefiero definirlo como básicamente como una propiedad que medimos.
-No es un como un snapshot como tal pero es algo que recogemos y los subimos a una colección. 
+Pero prefiero definirlo básicamente como una propiedad que medimos.
+
 
 ---
 
@@ -50,7 +50,7 @@ No es un como un snapshot como tal pero es algo que recogemos y los subimos a un
 
 ---
 
-## Métricas Ejemplo
+## Métricas ejemplo
 
 Antes:
 
@@ -67,14 +67,13 @@ Después de Telgraf:
 	mountpoint: srv/node/dfs10
 	unit: B
 	type: used
-	metric_type: gauge
 }
 ```
 
 ---
 
 
-## telegraf
+## Telegraf
 
 
 * Recogida de los datos, de diferentes fuentes.
@@ -85,7 +84,7 @@ Después de Telgraf:
 
 ---
 
-## Donde almacenar estas métricas?
+## ¿Donde almacenar estas métricas?
 
 
   - Menos esquemas 
@@ -121,13 +120,13 @@ Puertos:
 
 ---
 
-## Por que la elección de InfluxDB?
+## Otras características
 
  
 * Flexibilidad en el nombre de las métricas.
 * Sin limitación en las columnas.
 * Fácil de manejar, una buena documentación.
-* Presición  de tiempo en milisegundos.
+* Precisión  de tiempo en milisegundos.
 
 ---
 
@@ -136,7 +135,7 @@ Puertos:
  
 Sintaxis general:
 
-- List Series 
+- USE DBS
 - Select ... From ...Where ... Group by ....LIMIT
 - Delete From ... Where....
 
@@ -259,9 +258,6 @@ Configuramos el fichero httpd.conf
 	</Location>
 ```
 
-- **ExtendedStatus On**: Es para que muestre información adicional de nuestro servidor httpd.
-
-- **Allow from all**: Permisos para que desde fuera del servidor podamos consultar el estado de nuestro web.
 
 ---
 
@@ -269,7 +265,7 @@ Configuramos el fichero httpd.conf
 
 Este mecanismo permite utilizar varias imágenes y comunicarlas, para 
 obtener los requisitos necesarios para hacer funcionar nuestra estructura
-de gestión.
+de monitorización.
 
       version: "3"
       services:
@@ -301,14 +297,13 @@ Componentes de una monitorización
 
 Un monitorización es la herramienta y proceso que mide y administra nuestros sistemas.
 
-* disponibilidad (si esta up o down).
-* Detección  de fallos (si el servidor está funcionando correctamente).
-* planificación de capacidades (ahorro de dinero).
-* Alertas (avisar de cualquier imprevisto).
+* disponibilidad.
+* Detección  de fallos.
+* Alertas.
 
 ---
 
-### Gracias por vuestra atención
+### Gracias por vuestra atención.
 
 
 
