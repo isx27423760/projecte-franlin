@@ -1,10 +1,11 @@
 % Proyecto fin de ciclo Grafana
 % Franlin Colque
-% 2019/05/22
+% 2019/05/29
 
 ---
 
 ## Objetivos
+
 
 * Dar a conocer las bases de una monitorización.
 
@@ -22,19 +23,20 @@
 
 * Grafana
 
-	Grafana es una herramienta de código abierto. Se utiliza para visualizar series de datos en el análisis de infraestructuras y aplicaciones.
+	Se utiliza para visualizar series de datos en el análisis de infraestructuras y aplicaciones.
 
 * InfluxDB
 
-	Influxdb es un servidor de base de datos de series de tiempo (timeseries), ideal para logs o datos para gráficas que se generen en vivo.
+	Influxdb es un servidor de base de datos de series de tiempo (timeseries).
 
 * Telegraf
 
-	Telegraf es un agente ligero de recolección de datos, escrito en Go, cuyo principal propósito es enviar telemetría o métricas del sistema o de la aplicación a InfluxDB.
+	Telegraf es un agente ligero de recolección de datos.
 
 ---
 
 ## Métricas
+
 
 De acuerdo con la definición técnica es sistema o estándar de medidas.
 Pero prefiero definirlo como básicamente como una propiedad que medimos.
@@ -74,6 +76,7 @@ Después de Telgraf:
 
 ## telegraf
 
+
 * Recogida de los datos, de diferentes fuentes.
 * Procesado de los datos, para transformar y formatear los mismos.
 * Estadística de los datos como media, mínimo, máximo, etc.
@@ -84,6 +87,7 @@ Después de Telgraf:
 
 ## Donde almacenar estas métricas?
 
+
   - Menos esquemas 
   - Fácil de montar y mantener
   - Alto rendimiento
@@ -93,21 +97,22 @@ Después de Telgraf:
 
 ## InfluxDB
 
-Distribución open source, es una base de datos de serie de tiempo.
-
+ 
+ 
 Una base de datos de series de tiempo (TSDB) es un sistema de software que está 
 optimizado para el manejo de datos de series de tiempo, matrices de números 
 indexados por tiempo (una fecha o un rango de fecha y hora).
 
 Puertos:
+
 - 8086
 - 8088 
-
 
 ---
 
 ## Características
 
+ 
 - HTTP API.
 - SQL-like query language.
 - Buena selección de la librería de clientes y plugins.
@@ -118,6 +123,7 @@ Puertos:
 
 ## Por que la elección de InfluxDB?
 
+ 
 * Flexibilidad en el nombre de las métricas.
 * Sin limitación en las columnas.
 * Fácil de manejar, una buena documentación.
@@ -127,6 +133,7 @@ Puertos:
 
 ## SQL-like Query Language
 
+ 
 Sintaxis general:
 
 - List Series 
@@ -146,7 +153,7 @@ Además dispone de funciones:
 	[http]
 	enabled = true
 	bind-address = ":8086"
-	auth-enabled = true # ✨
+	auth-enabled = true 
 	log-enabled = true
 	https-certificate = "/etc/ssl/influxdb.pem"
 	```
@@ -170,33 +177,40 @@ Además dispone de funciones:
 ## Grafana
 
 Características principales:
-- Open Source.
-- Web based.
-- Soporta Windows.
-- Muchos orígenes de datos.
-- Gráficos elegantes.
-- Paneles dinámicos, reutilizables y altamente extensible.
-- Autenticación a través de LDAP, Google Auth, Grafana.com, Github y Gitlab.
-- Comparte de datos y cuadros de mando entre diferentes hosts.
-- TLS.
+
+* Open Source.
+* Web based.
+* Soporta Windows.
+* Muchos orígenes de datos.
+* Gráficos elegantes.
+* Paneles dinámicos, reutilizables y altamente extensible.
+* Autenticación a través de LDAP, Google Auth, Grafana.com, Github y Gitlab.
+* Comparte datos y cuadros de mando entre diferentes hosts.
+* TLS.
 
 ---
 
 ## Recursos y servicios
 
 Recursos: 
+
 - CPU
 - RAM
 - Disk
+
 Servicios:
-- OpenLDAP
+
+- OPENLDAP
 - HTTP
 
 ---
 
 ## Servidor LDAP
 
+    
+    
 Configurar slapd.conf:
+
 ```
 database monitor
 access to *
@@ -207,7 +221,8 @@ access to *
 ---
 
 ## Comprobación
-
+   
+    
 ```
 [root@localhost]$ ldapsearch -x -LLL -D  'cn=Manager,dc=grafana,dc=org' \
 	-w secret  -b 'cn=Monitor' -s base '(objectClass=*)' '*' '+'
@@ -234,6 +249,7 @@ hasSubordinates: TRUE
 ## Servidor HTTP
 
 Configuramos el fichero httpd.conf
+
 ``` 
 	ExtendedStatus On
 	<Location "/server-status">
@@ -242,6 +258,10 @@ Configuramos el fichero httpd.conf
 		Allow from all
 	</Location>
 ```
+
+- **ExtendedStatus On**: Es para que muestre información adicional de nuestro servidor httpd.
+
+- **Allow from all**: Permisos para que desde fuera del servidor podamos consultar el estado de nuestro web.
 
 ---
 
@@ -272,7 +292,7 @@ de gestión.
 
 ## Conclusiones
 
-componentes de una monitorización
+Componentes de una monitorización
 
 * Dato(medida)
 * Recolector
@@ -281,11 +301,14 @@ componentes de una monitorización
 
 Un monitorización es la herramienta y proceso que mide y administra nuestros sistemas.
 
-* disponibilidad (si esta up or down)
-* Detección  de fallos. (si el servidor está funcionando correctamente)
-* planificación de capacidades(ver si money)
-* Alertas(avisar cualquier imprevisto)
+* disponibilidad (si esta up o down).
+* Detección  de fallos (si el servidor está funcionando correctamente).
+* planificación de capacidades (ahorro de dinero).
+* Alertas (avisar de cualquier imprevisto).
 
+---
+
+### Gracias por vuestra atención
 
 
 
